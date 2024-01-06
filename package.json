@@ -1,20 +1,16 @@
 {
-	"name": "@natoboram/gigachad.ts",
+	"name": "@natoboram/based.ts",
 	"version": "0.0.0",
-	"description": "The most gigachad project setup for TypeScript.",
+	"description": "Change between bases",
 	"keywords": [
-		"eslint",
-		"gigachad",
-		"prettier",
-		"project-template",
-		"typescript",
-		"vitest"
+		"base64",
+		"base16"
 	],
-	"homepage": "https://github.com/NatoBoram/gigachad.ts",
+	"homepage": "https://github.com/NatoBoram/based.ts",
 	"bugs": {
-		"url": "https://github.com/NatoBoram/gigachad.ts/issues"
+		"url": "https://github.com/NatoBoram/based.ts/issues"
 	},
-	"license": "Unlicense",
+	"license": "LGPL-3.0-or-later",
 	"author": {
 		"name": "Nato Boram",
 		"url": "https://github.com/NatoBoram"
@@ -36,13 +32,10 @@
 	"main": "dist/index.js",
 	"module": "dist/index.js",
 	"bin": "dist/main.js",
-	"repository": "github:NatoBoram/gigachad.ts",
+	"repository": "github:NatoBoram/based.ts",
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsx ./src/main.ts",
-		"docker": "pnpm run docker:build && npm run docker:run",
-		"docker:build": "docker build -t gigachad.ts .",
-		"docker:run": "docker run gigachad.ts",
 		"docs": "typedoc",
 		"format": "prettier --write .",
 		"lint": "eslint . && prettier --check .",

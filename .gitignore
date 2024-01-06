@@ -8,8 +8,8 @@ package-lock.json
 .env.*.local
 .env.local
 
-# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,node
+# Created by https://www.toptal.com/developers/gitignore/api/node,linux,macos,windows
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,linux,macos,windows
 
 ### Linux ###
 *~
@@ -222,4 +222,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,node
+# End of https://www.toptal.com/developers/gitignore/api/node,linux,macos,windows
