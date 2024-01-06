@@ -4,8 +4,15 @@
 
 Change between bases.
 
-## Installation
+## Usage
 
 ```sh
 pnpm i -D @natoboram/based.ts
+```
+
+```ts
+import { base36Uuid } from "@natoboram/based.ts"
+
+const uuid = base36Uuid()
+console.log("Base 36 UUID:", uuid)
 ```
