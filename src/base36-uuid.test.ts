@@ -48,8 +48,6 @@ describe("bigIntToBase36", () => {
 		expect(base36).toBeTypeOf("string")
 		expect(base36.length).greaterThanOrEqual(24)
 		expect(base36.length).lessThanOrEqual(25)
-
-		console.log("Here's a free base36 UUID for you:", base36)
 	})
 
 	test("max safe integer", ({ expect }) => {

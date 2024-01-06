@@ -31,7 +31,9 @@
 	],
 	"main": "dist/index.js",
 	"module": "dist/index.js",
-	"bin": "dist/main.js",
+	"bin": {
+		"basedts": "dist/main.js"
+	},
 	"repository": "github:NatoBoram/based.ts",
 	"scripts": {
 		"build": "tsc",
