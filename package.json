@@ -1,6 +1,6 @@
 {
 	"name": "@natoboram/based.ts",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Change between bases",
 	"keywords": [
 		"base36",
