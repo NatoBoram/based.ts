@@ -17,8 +17,7 @@ basedts
 Base 36 UUID: 2pcugbwbg50o24pnu8h3u1f0b
 ```
 
-Proper CLI options are planned for the future, but for now that's all I needed
-this package for.
+Proper CLI options are planned for the future, but for now that's all I needed this package for.
 
 ## Usage
 
