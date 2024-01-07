@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
-import { base36Uuid } from "./base36-uuid.js"
+import { bytesToBigInt, getRandomBytes, toBase } from "./index.js"
 
-const uuid = base36Uuid()
-console.log("Base 36 UUID:", uuid)
+const bytes = getRandomBytes()
+const bigInt = bytesToBigInt(bytes)
+const base36 = toBase(bigInt, 36n)
+
+console.log("Base 36 UUID:", base36)
