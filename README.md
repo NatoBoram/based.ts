@@ -2,7 +2,7 @@
 
 [![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml)
 
-Change between bases.
+A TypeScript library for working with arbitrary bases.
 
 ## Usage
 
@@ -11,8 +11,11 @@ pnpm i -D @natoboram/based.ts
 ```
 
 ```ts
-import { base36Uuid } from "@natoboram/based.ts"
+import { bytesToBigInt, getRandomBytes, toBase } from "@natoboram/based.ts"
 
-const uuid = base36Uuid()
-console.log("Base 36 UUID:", uuid)
+const bytes = getRandomBytes()
+const bigInt = bytesToBigInt(bytes)
+const base36 = toBase(bigInt, 36n)
+
+console.log("Base 36 UUID:", base36)
 ```
