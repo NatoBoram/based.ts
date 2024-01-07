@@ -1,9 +1,14 @@
 {
 	"name": "@natoboram/based.ts",
 	"version": "0.0.1",
-	"description": "Change between bases",
+	"description": "A TypeScript library for working with arbitrary bases",
 	"keywords": [
+		"base2",
+		"base10",
+		"base16",
 		"base36",
+		"base62",
+		"base64",
 		"uuid"
 	],
 	"homepage": "https://github.com/NatoBoram/based.ts",
