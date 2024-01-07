@@ -1,6 +1,6 @@
 # `based.ts`
 
-[![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml)
+[![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml) [![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![GitHub Downloads](https://img.shields.io/github/downloads/NatoBoram/based.ts/total?logo=github)](https://github.com/NatoBoram/based.ts/releases) [![NPM Downloads](https://img.shields.io/npm/dt/%40natoboram/based.ts?logo=npm)](https://www.npmjs.com/package/@natoboram/based.ts)
 
 A TypeScript library for working with arbitrary bases.
 
