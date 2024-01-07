@@ -8,6 +8,8 @@ export function basedToBigInt(
 	base: bigint,
 	space = base64Space,
 ): bigint {
+	space = space.slice(0, Number(base))
+
 	if (space.length < Number(base))
 		throw new Error("Invalid space for this base", {
 			cause: { based, base, space },
@@ -16,10 +18,16 @@ export function basedToBigInt(
 	if (base <= 36) based = based.toLowerCase()
 	if (based.startsWith("-")) return -basedToBigInt(based.slice(1), base, space)
 
-	return Array.from(based).reduce<bigint>((result, digit, index) => {
+	return Array.from(based).reduce<bigint>((result, digit, digitIndex) => {
+		const spaceIndex = space.indexOf(digit)
+		if (spaceIndex == -1)
+			throw new Error("Invalid digit for this space", {
+				cause: { based, base, space, result, digit, digitIndex, spaceIndex },
+			})
+
 		return (
 			result +
-			BigInt(space.indexOf(digit)) * base ** BigInt(based.length - 1 - index)
+			BigInt(spaceIndex) * base ** BigInt(based.length - 1 - digitIndex)
 		)
 	}, 0n)
 }

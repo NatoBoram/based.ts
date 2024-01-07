@@ -89,4 +89,10 @@ describe("basedToBigInt", () => {
 			"Invalid space for this base",
 		)
 	})
+
+	test("Wrong base", ({ expect }) => {
+		expect(() => basedToBigInt("F", 10n, base64Space.slice(0, 16))).toThrow(
+			"Invalid digit for this space",
+		)
+	})
 })
