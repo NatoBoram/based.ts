@@ -15,9 +15,16 @@ export function toBase(
 
 	let result = ""
 	while (value) {
-		const digit = Number(value % base)
+		const index = Number(value % base)
 		value /= base
-		result = space[digit] + result
+
+		const digit = space[index]
+		if (digit === undefined)
+			throw new Error("Invalid index", {
+				cause: { value, base, space, index, result },
+			})
+
+		result = digit + result
 	}
 
 	return result
