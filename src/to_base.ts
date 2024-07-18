@@ -4,7 +4,7 @@ import { base64Space } from "./space.js"
 export function toBase(
 	value: bigint,
 	base: bigint,
-	space = base64Space,
+	space: string = base64Space,
 ): string {
 	if (space.length < Number(base))
 		throw new Error("Invalid space for this base", {

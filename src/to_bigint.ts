@@ -6,7 +6,7 @@ import type { TypedUintArray } from "./typed_array.js"
 export function basedToBigInt(
 	based: string,
 	base: bigint,
-	space = base64Space,
+	space: string = base64Space,
 ): bigint {
 	space = space.slice(0, Number(base))
 
