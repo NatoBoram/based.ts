@@ -8,7 +8,7 @@ export class Based {
 	constructor(
 		readonly value: string,
 		readonly base: bigint,
-		readonly space = base64Space,
+		readonly space: string = base64Space,
 	) {}
 
 	divide(based: Based): Based {
