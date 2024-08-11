@@ -58,7 +58,7 @@
 		"tsx": "^4.17.0",
 		"typedoc": "^0.26.5",
 		"typescript": "~5.5.4",
-		"typescript-eslint": "^7.18.0",
+		"typescript-eslint": "^8.0.1",
 		"vitest": "^2.0.5"
 	},
 	"type": "module",
