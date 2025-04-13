@@ -1,6 +1,6 @@
 {
 	"name": "@natoboram/based.ts",
-	"version": "0.0.3",
+	"version": "1.0.0",
 	"description": "A TypeScript library for working with arbitrary bases",
 	"keywords": [
 		"base2",
