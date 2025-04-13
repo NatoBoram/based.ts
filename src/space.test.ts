@@ -1,5 +1,5 @@
 import { describe, test } from "vitest"
-import { toBase } from "./to_base.js"
+import { toBase } from "./to_base.ts"
 
 describe("base64Space", () => {
 	test("a", ({ expect }) => {

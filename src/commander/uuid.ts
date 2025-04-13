@@ -1,5 +1,5 @@
-import { getRandomBytes } from "../bytes.js"
-import { bytesToBase } from "../to_base.js"
+import { getRandomBytes } from "../bytes.ts"
+import { bytesToBase } from "../to_base.ts"
 
 interface UuidOptions {
 	readonly base: string

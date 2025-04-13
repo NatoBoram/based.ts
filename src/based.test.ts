@@ -1,6 +1,6 @@
 import { describe, test } from "vitest"
-import { Based } from "./based.js"
-import { base64Space } from "./space.js"
+import { Based } from "./based.ts"
+import { base64Space } from "./space.ts"
 
 describe("Based", () => {
 	const base2 = new Based("10", 2n, base64Space.slice(0, 2))

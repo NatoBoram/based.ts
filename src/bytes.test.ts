@@ -1,5 +1,5 @@
 import { test } from "vitest"
-import { getRandomBytes } from "./bytes.js"
+import { getRandomBytes } from "./bytes.ts"
 
 test("getRandomBytes", ({ expect }) => {
 	const bits = getRandomBytes()

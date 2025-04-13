@@ -1,7 +1,7 @@
-import { base64Space } from "./space.js"
-import { toBase, utf8ToBase } from "./to_base.js"
-import { basedToBigInt } from "./to_bigint.js"
-import { basedToUtf8 } from "./to_utf-8.js"
+import { base64Space } from "./space.ts"
+import { toBase, utf8ToBase } from "./to_base.ts"
+import { basedToBigInt } from "./to_bigint.ts"
+import { basedToUtf8 } from "./to_utf-8.ts"
 
 /** Base-encoded string. Use this class if you convert from and to different
  * bases often. Otherwise, just use the provided utilities. You can provide a custom number's space */
