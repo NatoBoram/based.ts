@@ -1,4 +1,6 @@
 import { base64Space } from "./space.js"
+import { bytesToBigInt, utf8ToBigInt } from "./to_bigint.js"
+import type { TypedUintArray } from "./typed_array.js"
 
 /** Convert a number to a string in a given base. */
 export function toBase(
@@ -28,4 +30,23 @@ export function toBase(
 	}
 
 	return result
+}
+
+/** Convert a UTF-8 string to a number in a given base. */
+export function utf8ToBase(
+	value: string,
+	base: bigint,
+	space: string = base64Space,
+): string {
+	const bigInt = utf8ToBigInt(value)
+	return toBase(bigInt, base, space)
+}
+
+export function bytesToBase(
+	bytes: TypedUintArray,
+	base: bigint,
+	space: string = base64Space,
+): string {
+	const bigInt = bytesToBigInt(bytes)
+	return toBase(bigInt, base, space)
 }

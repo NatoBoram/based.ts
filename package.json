@@ -47,7 +47,8 @@
 		"lint": "eslint . && prettier --check .",
 		"lint:fix": "eslint --fix .; prettier --list-different --write .",
 		"start": "node dist/main.js",
-		"test": "vitest"
+		"test": "vitest run",
+		"test:watch": "vitest"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.9.0",

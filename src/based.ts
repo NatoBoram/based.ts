@@ -1,6 +1,7 @@
 import { base64Space } from "./space.js"
-import { toBase } from "./to_base.js"
+import { toBase, utf8ToBase } from "./to_base.js"
 import { basedToBigInt } from "./to_bigint.js"
+import { basedToUtf8 } from "./to_utf-8.js"
 
 /** Base-encoded string. Use this class if you convert from and to different
  * bases often. Otherwise, just use the provided utilities. You can provide a custom number's space */
@@ -10,6 +11,15 @@ export class Based {
 		readonly base: bigint,
 		readonly space: string = base64Space,
 	) {}
+
+	static fromUtf8(value: string, space: string = base64Space): Based {
+		const based = utf8ToBase(value, 10n, space)
+		return new Based(based, 10n, space)
+	}
+
+	toUtf8(): string {
+		return basedToUtf8(this.value, this.base, this.space)
+	}
 
 	divide(based: Based): Based {
 		const dividend = basedToBigInt(this.value, this.base, this.space)
