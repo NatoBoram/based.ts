@@ -1,9 +1,11 @@
 import type { Command } from "commander"
 import { createCommand } from "commander"
-import { bin, description, version } from "../../package.json"
+import pkg from "../../package.json" with { type: "json" }
 import { base64Space } from "../space.js"
 import { convert } from "./convert.js"
 import { uuid } from "./uuid.js"
+
+const { bin, version, description } = pkg
 
 const name = Object.keys(bin).find(Boolean)
 if (!name) {
