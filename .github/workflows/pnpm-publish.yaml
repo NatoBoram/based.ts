@@ -43,14 +43,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: pnpm pack --pack-gzip-level 9
-      - name: Sign
-        run: |
-          eval `ssh-agent -s`
-          ssh-add - <<< '${{ secrets.DEPLOY_KEY_PRIVATE }}'
-          echo '${{ vars.DEPLOY_KEY_PUBLIC }}' > '${{ runner.temp }}/DEPLOY_KEY_PUBLIC.pub'
-          ssh-keygen -Y sign -f '${{ runner.temp }}/DEPLOY_KEY_PUBLIC.pub' -n file natoboram-based.ts-*.tgz
-          ssh-keygen -Y verify -f ./.github/authorized_keys -I '41898282+github-actions[bot]@users.noreply.github.com' -n file -s natoboram-based.ts-*.tgz.sig < natoboram-based.ts-*.tgz
 
-      - run: gh release upload ${{ github.ref_name }} natoboram-based.ts-*.tgz natoboram-based.ts-*.tgz.sig
+      - run: gh release create "$VERSION" --generate-notes --title "$VERSION" --verify-tag natoboram-based.ts-*.tgz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ github.ref_name }}
