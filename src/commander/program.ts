@@ -1,9 +1,9 @@
 import type { Command } from "commander"
 import { createCommand } from "commander"
 import pkg from "../../package.json" with { type: "json" }
-import { base64Space } from "../space.js"
-import { convert } from "./convert.js"
-import { uuid } from "./uuid.js"
+import { base64Space } from "../space.ts"
+import { convert } from "./convert.ts"
+import { uuid } from "./uuid.ts"
 
 const { bin, version, description } = pkg
 

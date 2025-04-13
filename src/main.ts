@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import { program } from "./commander/program.js"
+import { program } from "./commander/program.ts"
 program.parse(process.argv)

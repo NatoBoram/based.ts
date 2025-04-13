@@ -1,6 +1,6 @@
 import { describe, test } from "vitest"
-import { base64Space } from "./space.js"
-import { basedToBigInt, bytesToBigInt } from "./to_bigint.js"
+import { base64Space } from "./space.ts"
+import { basedToBigInt, bytesToBigInt } from "./to_bigint.ts"
 
 describe("bytesToBigInt", () => {
 	test("Uint8ClampedArray", ({ expect }) => {

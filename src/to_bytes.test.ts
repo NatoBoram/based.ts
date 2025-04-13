@@ -1,5 +1,5 @@
 import { test } from "vitest"
-import { bigIntToBytes } from "./to_bytes.js"
+import { bigIntToBytes } from "./to_bytes.ts"
 
 test("bigIntToBytes", ({ expect }) => {
 	const bytes = bigIntToBytes(65536n)

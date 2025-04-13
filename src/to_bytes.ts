@@ -1,5 +1,5 @@
-import { base64Space } from "./space.js"
-import { basedToBigInt } from "./to_bigint.js"
+import { base64Space } from "./space.ts"
+import { basedToBigInt } from "./to_bigint.ts"
 
 /** Turns a `bigint` into a `Uint8ClampedArray` by converting it to a
  * hexadecimal string then turning each digit into a pair of bytes. */

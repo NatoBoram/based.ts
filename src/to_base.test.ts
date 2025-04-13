@@ -1,6 +1,6 @@
 import { describe, test } from "vitest"
-import { base64Space } from "./space.js"
-import { toBase } from "./to_base.js"
+import { base64Space } from "./space.ts"
+import { toBase } from "./to_base.ts"
 
 describe("toBase", () => {
 	test("base 2", ({ expect }) => {

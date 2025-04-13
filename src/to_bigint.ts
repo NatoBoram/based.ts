@@ -1,6 +1,6 @@
-import { base64Space } from "./space.js"
-import { utf8ToBytes } from "./to_bytes.js"
-import type { TypedUintArray } from "./typed_array.js"
+import { base64Space } from "./space.ts"
+import { utf8ToBytes } from "./to_bytes.ts"
+import type { TypedUintArray } from "./typed_array.ts"
 
 /** Turns a `string` in a given `base` into a `bigint` by multiplying each digit
  * by the `base` raised to the power of its position in the `string`. */

@@ -15,6 +15,7 @@
 		"rootDir": "./src",
 		"moduleResolution": "NodeNext",
 		"typeRoots": ["./node_modules/@types", "./src/types"],
+		"rewriteRelativeImportExtensions": true,
 		"resolvePackageJsonExports": true,
 		"resolvePackageJsonImports": true,
 		"resolveJsonModule": true,
@@ -26,12 +27,12 @@
 		"declarationMap": true,
 		"sourceMap": true,
 		"outDir": "./dist",
-		"downlevelIteration": true,
 
 		/* Interop Constraints */
 		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
 		"isolatedDeclarations": true,
+		"erasableSyntaxOnly": true,
 		"forceConsistentCasingInFileNames": true,
 
 		/* Type Checking */

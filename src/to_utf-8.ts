@@ -1,6 +1,6 @@
-import { base64Space } from "./space.js"
-import { basedToBytes, bigIntToBytes } from "./to_bytes.js"
-import type { TypedUintArray } from "./typed_array.js"
+import { base64Space } from "./space.ts"
+import { basedToBytes, bigIntToBytes } from "./to_bytes.ts"
+import type { TypedUintArray } from "./typed_array.ts"
 
 export function basedToUtf8(
 	based: string,

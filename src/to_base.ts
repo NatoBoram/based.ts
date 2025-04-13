@@ -1,6 +1,6 @@
-import { base64Space } from "./space.js"
-import { bytesToBigInt, utf8ToBigInt } from "./to_bigint.js"
-import type { TypedUintArray } from "./typed_array.js"
+import { base64Space } from "./space.ts"
+import { bytesToBigInt, utf8ToBigInt } from "./to_bigint.ts"
+import type { TypedUintArray } from "./typed_array.ts"
 
 /** Convert a number to a string in a given base. */
 export function toBase(
