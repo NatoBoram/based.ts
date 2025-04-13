@@ -12,9 +12,13 @@ export class Based {
 		readonly space: string = base64Space,
 	) {}
 
-	static fromUtf8(value: string, space: string = base64Space): Based {
-		const based = utf8ToBase(value, 10n, space)
-		return new Based(based, 10n, space)
+	static fromUtf8(
+		value: string,
+		base = 10n,
+		space: string = base64Space,
+	): Based {
+		const based = utf8ToBase(value, base, space)
+		return new Based(based, base, space)
 	}
 
 	toUtf8(): string {
