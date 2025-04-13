@@ -1,3 +1,6 @@
+import { base64Space } from "./space.js"
+import { basedToBigInt } from "./to_bigint.js"
+
 /** Turns a `bigint` into a `Uint8ClampedArray` by converting it to a
  * hexadecimal string then turning each digit into a pair of bytes. */
 export function bigIntToBytes(bigInt: bigint): Uint8ClampedArray {
@@ -13,4 +16,18 @@ export function bigIntToBytes(bigInt: bigint): Uint8ClampedArray {
 	}
 
 	return bytes
+}
+
+export function utf8ToBytes(value: string): Uint8Array {
+	const encoder = new TextEncoder()
+	return encoder.encode(value)
+}
+
+export function basedToBytes(
+	based: string,
+	base: bigint,
+	space: string = base64Space,
+): Uint8ClampedArray {
+	const bigInt = basedToBigInt(based, base, space)
+	return bigIntToBytes(bigInt)
 }

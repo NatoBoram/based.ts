@@ -1,4 +1,5 @@
 import { base64Space } from "./space.js"
+import { utf8ToBytes } from "./to_bytes.js"
 import type { TypedUintArray } from "./typed_array.js"
 
 /** Turns a `string` in a given `base` into a `bigint` by multiplying each digit
@@ -45,4 +46,9 @@ export function bytesToBigInt(typedArray: TypedUintArray): bigint {
 	)
 
 	return BigInt(`0x${hexes.join("")}`)
+}
+
+export function utf8ToBigInt(value: string): bigint {
+	const bytes = utf8ToBytes(value)
+	return bytesToBigInt(bytes)
 }
