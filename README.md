@@ -1,44 +1,67 @@
-# `based.ts`
+# [`@natoboram/based.ts`](https://github.com/NatoBoram/based.ts)
 
-[![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml) [![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![GitHub Downloads](https://img.shields.io/github/downloads/NatoBoram/based.ts/total?logo=github)](https://github.com/NatoBoram/based.ts/releases) [![NPM Downloads](https://img.shields.io/npm/dt/%40natoboram/based.ts?logo=npm)](https://www.npmjs.com/package/@natoboram/based.ts) [![Dependabot Updates](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates)
+[![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml) [![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![GitHub Downloads](https://img.shields.io/github/downloads/NatoBoram/based.ts/total?logo=github)](https://github.com/NatoBoram/based.ts/releases) [![NPM Downloads](https://img.shields.io/npm/dt/%40natoboram/based.ts?logo=npm)](https://www.npmjs.com/package/@natoboram/based.ts) [![Dependabot Updates](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates) [![Wakapi](https://wakapi.dev/api/badge/NatoBoram/interval:any/project:based.ts)](https://wakapi.dev/summary?interval=any&project=based.ts)
 
 A TypeScript library for working with arbitrary bases.
 
-## Installation
+## CLI
 
-It can be installed globally if you want to generate base36-encoded UUIDs.
+It can be installed globally if you want to convert numbers or generate UUIDs from the terminal.
 
 ```sh
 pnpm install --global @natoboram/based.ts
-basedts
 ```
 
 ```log
-Base 36 UUID: 2pcugbwbg50o24pnu8h3u1f0b
+Usage: basedts convert [options] <number>
+
+Convert a number from a base in a space to another base in another space
+
+Arguments:
+  number                The number to convert
+
+Options:
+  --from-base <base>    The base of the number (default: "10")
+  --from-space <space>  The space of the number to convert from (default: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/")
+  --to-base <base>      The base to convert to (default: "10")
+  --to-space <space>    The space to convert the number to (default: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/")
+  -h, --help            Display help for command
 ```
 
-Proper CLI options are planned for the future, but for now that's all I needed this package for.
+```log
+Usage: basedts uuid [options]
 
-## Usage
+Generate a UUID in a different base with a different space than normal UUIDs
+
+Options:
+  --base <base>    The base of the UUID to generate (default: "16")
+  --space <space>  The space of the UUID to generate (default: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/")
+  -h, --help       Display help for command
+```
+
+## Library
 
 ```sh
-pnpm i -D @natoboram/based.ts
+pnpm install @natoboram/based.ts
 ```
 
 ```ts
-import {
-	basedToBigInt,
-	bytesToBigInt,
-	getRandomBytes,
-	toBase,
-} from "@natoboram/based.ts"
-
-// Generate a base36-encoded UUID
-const bytes = getRandomBytes()
-const bigInt = bytesToBigInt(bytes)
-const base36 = toBase(bigInt, 36n)
-console.log("Base 36 UUID:", base36)
+import { toBase, basedToBigInt } from "@natoboram/based.ts"
 
 // Convert between two bases
-const base64 = toBase(basedToBigInt("20zsnycqen1k898slr7xgnc9t", 36n), 64n)
+const bigInt = basedToBigInt("69", 10n)
+const based = toBase(bigInt, 16n)
+
+console.log(based) // 45
+```
+
+```ts
+import { Based } from "@natoboram/based.ts"
+
+// Perform operations on numbers of different bases
+const four = new Based("4", 64n)
+const two = new Based("2", 16n)
+const result = four.divide(two).to(10n)
+
+console.log(result.value) // 2
 ```
