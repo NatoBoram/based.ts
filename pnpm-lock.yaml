@@ -18,6 +18,9 @@ importers:
       '@types/node':
         specifier: ^24.3.0
         version: 24.3.0
+      '@typescript/native-preview':
+        specifier: 7.0.0-dev.20250902.1
+        version: 7.0.0-dev.20250902.1
       eslint:
         specifier: ^9.9.0
         version: 9.34.0
@@ -627,6 +630,53 @@ packages:
   '@typescript-eslint/visitor-keys@8.41.0':
     resolution: {integrity: sha512-+GeGMebMCy0elMNg67LRNoVnUFPIm37iu5CmHESVx56/9Jsfdpsvbv605DQ81Pi/x11IdKUsS5nzgTYbCQU9fg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@typescript/native-preview-darwin-arm64@7.0.0-dev.20250902.1':
+    resolution: {integrity: sha512-RQf5KLTK2hPGmrU6QQk75Df1mYFC5hk2Z8pHyT4Sb6jo0bKj6DXjEoZopwo052s4s6CSbQb4TUFSqXuFbp5EnQ==}
+    engines: {node: '>=20.6.0'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@typescript/native-preview-darwin-x64@7.0.0-dev.20250902.1':
+    resolution: {integrity: sha512-yh6dpN8+sgHS8gqDT34WsKWVgpqBMKeJ1toEgm728q4ijd27Cq3XmfZI0NALjfGMhgcokpRIxJe4Snu7zNA8QA==}
+    engines: {node: '>=20.6.0'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@typescript/native-preview-linux-arm64@7.0.0-dev.20250902.1':
+    resolution: {integrity: sha512-d4D3Yj1YB3wJl96dxI6ZrVZx9c2c7UQqs+r12WVvHh6MC4qycjcwtmBMQjPssJ2WKXWTIBLW6dGnVl65W6AZBw==}
+    engines: {node: '>=20.6.0'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@typescript/native-preview-linux-arm@7.0.0-dev.20250902.1':
+    resolution: {integrity: sha512-n/+QcsJhxAteZJ7f8ynZdQCtg8VrLzf666o91/K2b/LBv/kswG+b/S/tG0KNvqgw0IB8h4LKtla0yblkXL794w==}
+    engines: {node: '>=20.6.0'}
+    cpu: [arm]
+    os: [linux]
+
+  '@typescript/native-preview-linux-x64@7.0.0-dev.20250902.1':
+    resolution: {integrity: sha512-0M1JAhYt+iDeNuLXHVNg0WF0HZMU0PGHlt45BoxJ/t7hV4Y8AcnATzlQ+xiKP0ZxRTfDIGztHyWzHtRkjqNetg==}
+    engines: {node: '>=20.6.0'}
+    cpu: [x64]
+    os: [linux]
+
+  '@typescript/native-preview-win32-arm64@7.0.0-dev.20250902.1':
+    resolution: {integrity: sha512-6beShbnPsX2X70Pk51rW1naik/lJ3kesUV4UbwS8sYjxlrynGwiYbWe2jATAGGHmIp5L/uRDFlBfrveqAsa70Q==}
+    engines: {node: '>=20.6.0'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@typescript/native-preview-win32-x64@7.0.0-dev.20250902.1':
+    resolution: {integrity: sha512-ZFjMEGKFQI+gdZUWmeQbZ1sgIIzlEcA9TLLjkixGsdrmhAO9OtnWixKv9nz6GoZNtWAcSFnOK4mTfIaZsWAZvA==}
+    engines: {node: '>=20.6.0'}
+    cpu: [x64]
+    os: [win32]
+
+  '@typescript/native-preview@7.0.0-dev.20250902.1':
+    resolution: {integrity: sha512-8FenI3kM42BQA2hnpBSGW0i7HGVJqTy2KAs5otAv2esM/kaWt9LI4xyDsj/v5yz18j85Mi9f/goB2h157p0Y+Q==}
+    engines: {node: '>=20.6.0'}
+    hasBin: true
 
   '@vitest/expect@3.2.4':
     resolution: {integrity: sha512-Io0yyORnB6sikFlt8QW5K7slY4OjqNX9jmJQ02QDda8lyM6B5oNgVWoSoKPac8/kgnCUzuHQKrSLtu/uOqqrig==}
@@ -1720,6 +1770,37 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.41.0
       eslint-visitor-keys: 4.2.1
+
+  '@typescript/native-preview-darwin-arm64@7.0.0-dev.20250902.1':
+    optional: true
+
+  '@typescript/native-preview-darwin-x64@7.0.0-dev.20250902.1':
+    optional: true
+
+  '@typescript/native-preview-linux-arm64@7.0.0-dev.20250902.1':
+    optional: true
+
+  '@typescript/native-preview-linux-arm@7.0.0-dev.20250902.1':
+    optional: true
+
+  '@typescript/native-preview-linux-x64@7.0.0-dev.20250902.1':
+    optional: true
+
+  '@typescript/native-preview-win32-arm64@7.0.0-dev.20250902.1':
+    optional: true
+
+  '@typescript/native-preview-win32-x64@7.0.0-dev.20250902.1':
+    optional: true
+
+  '@typescript/native-preview@7.0.0-dev.20250902.1':
+    optionalDependencies:
+      '@typescript/native-preview-darwin-arm64': 7.0.0-dev.20250902.1
+      '@typescript/native-preview-darwin-x64': 7.0.0-dev.20250902.1
+      '@typescript/native-preview-linux-arm': 7.0.0-dev.20250902.1
+      '@typescript/native-preview-linux-arm64': 7.0.0-dev.20250902.1
+      '@typescript/native-preview-linux-x64': 7.0.0-dev.20250902.1
+      '@typescript/native-preview-win32-arm64': 7.0.0-dev.20250902.1
+      '@typescript/native-preview-win32-x64': 7.0.0-dev.20250902.1
 
   '@vitest/expect@3.2.4':
     dependencies:

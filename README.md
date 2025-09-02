@@ -1,6 +1,6 @@
 # [`@natoboram/based.ts`](https://github.com/NatoBoram/based.ts)
 
-[![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml) [![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![GitHub Downloads](https://img.shields.io/github/downloads/NatoBoram/based.ts/total?logo=github)](https://github.com/NatoBoram/based.ts/releases) [![NPM Downloads](https://img.shields.io/npm/dt/%40natoboram/based.ts?logo=npm)](https://www.npmjs.com/package/@natoboram/based.ts) [![Dependabot Updates](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates) [![Wakapi](https://wakapi.dev/api/badge/NatoBoram/interval:any/project:based.ts)](https://wakapi.dev/summary?interval=any&project=based.ts)
+[![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml) [![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![GitHub Downloads](https://img.shields.io/github/downloads/NatoBoram/based.ts/total?logo=github)](https://github.com/NatoBoram/based.ts/releases) [![NPM Downloads](https://img.shields.io/npm/dt/%40natoboram/based.ts?logo=npm)](https://www.npmjs.com/package/@natoboram/based.ts) [![Dependabot Updates](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates) [![Wakapi](https://wakapi.dev/api/badge/NatoBoram/interval:any/project:based.ts)](https://wakapi.dev/summary?interval=any&project=based.ts) [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/NatoBoram/based.ts?logo=CodeRabbit&logoColor=FF570A&label=CodeRabbit%20Reviews&labelColor=171717&color=FF570A)](https://github.com/NatoBoram/based.ts/pulls?q=reviewed-by%3Acoderabbitai%5Bbot%5D)
 
 A TypeScript library for working with arbitrary bases.
 
@@ -65,3 +65,7 @@ const result = four.divide(two).to(10n)
 
 console.log(result.value) // 2
 ```
+
+## License
+
+This _Source Code Form_ is subject to the terms of the **Mozilla Public License v2.0**. If a copy of the MPL was not distributed with this file, you can obtain one at <https://mozilla.org/MPL/2.0>.
