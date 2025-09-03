@@ -1,7 +1,7 @@
 import { describe, test } from "vitest"
 import { toBase } from "./to_base.ts"
 
-describe("base64Space", () => {
+describe.concurrent("base64Space", () => {
 	test("a", ({ expect }) => {
 		const reference = (10).toString(36)
 		const result = toBase(10n, 36n)

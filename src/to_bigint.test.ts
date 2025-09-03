@@ -2,7 +2,7 @@ import { describe, test } from "vitest"
 import { base64Space } from "./space.ts"
 import { basedToBigInt, bytesToBigInt } from "./to_bigint.ts"
 
-describe("bytesToBigInt", () => {
+describe.concurrent("bytesToBigInt", () => {
 	test("Uint8ClampedArray", ({ expect }) => {
 		const bits = new Uint8ClampedArray([1, 0])
 		const bigInt = bytesToBigInt(bits)
@@ -32,7 +32,7 @@ describe("bytesToBigInt", () => {
 	})
 })
 
-describe("basedToBigInt", () => {
+describe.concurrent("basedToBigInt", () => {
 	test("base 2", ({ expect }) => {
 		expect(basedToBigInt("1", 2n)).toBe(1n)
 		expect(basedToBigInt("10", 2n)).toBe(2n)

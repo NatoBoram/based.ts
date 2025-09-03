@@ -1,3 +1,4 @@
+import type { UUID } from "node:crypto"
 import { base64Space } from "./space.ts"
 import { basedToBigInt } from "./to_bigint.ts"
 
@@ -30,4 +31,9 @@ export function basedToBytes(
 ): Uint8ClampedArray {
 	const bigInt = basedToBigInt(based, base, space)
 	return bigIntToBytes(bigInt)
+}
+
+export function uuidToBytes(uuid: UUID): Uint8ClampedArray {
+	const value = uuid.replaceAll("-", "")
+	return basedToBytes(value, 16n, base64Space)
 }

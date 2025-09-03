@@ -2,7 +2,7 @@ import { describe, test } from "vitest"
 import { base64Space } from "./space.ts"
 import { toBase } from "./to_base.ts"
 
-describe("toBase", () => {
+describe.concurrent("toBase", () => {
 	test("base 2", ({ expect }) => {
 		expect(toBase(1n, 2n)).toBe("1")
 		expect(toBase(2n, 2n)).toBe("10")

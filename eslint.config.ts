@@ -19,6 +19,16 @@ const config: ConfigArray = tseslint.config(
 
 	{
 		rules: {
+			"@typescript-eslint/consistent-type-assertions": [
+				"error",
+				{ assertionStyle: "never" },
+			],
+		},
+		// ignores: ["**/*.test.ts"],
+	},
+
+	{
+		rules: {
 			"@typescript-eslint/class-methods-use-this": [
 				"error",
 				{
@@ -51,6 +61,15 @@ const config: ConfigArray = tseslint.config(
 				{ checkArrowFunctions: false },
 			],
 			"@typescript-eslint/require-array-sort-compare": "error",
+			"@typescript-eslint/restrict-template-expressions": [
+				"error",
+				{
+					allowBoolean: true,
+					allowNullish: true,
+					allowNumber: true,
+					allowRegExp: true,
+				},
+			],
 			"@typescript-eslint/return-await": "error",
 			"@typescript-eslint/sort-type-constituents": "error",
 			"@typescript-eslint/switch-exhaustiveness-check": "error",
