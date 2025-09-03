@@ -12,9 +12,19 @@ export function basedToUuid(
 	return bigIntToUuid(bigInt)
 }
 
-function trimUuid(hexes: string): string {
+/**
+ * Trims a string to exactly 32 characters long, padding with leading zeroes if
+ * necessary.
+ *
+ * @param hexes The hexadecimal string to process.
+ * @returns A 32-character hexadecimal string.
+ *
+ * @example
+ * trimUuidHexes("1") // "00000000000000000000000000000001"
+ */
+export function trimUuidHexes(hexes: string): string {
 	if (hexes.length < 32) return hexes.padStart(32, "0")
-	if (hexes.length > 32) hexes.slice(hexes.length - 32, hexes.length)
+	if (hexes.length > 32) return hexes.slice(-32)
 	return hexes
 }
 
@@ -27,7 +37,7 @@ function isUuid(uuid: string): uuid is UUID {
 
 export function bigIntToUuid(bigInt: bigint): UUID {
 	const base16 = toBase(bigInt, 16n)
-	const hexes = trimUuid(base16)
+	const hexes = trimUuidHexes(base16)
 
 	const uuid = [
 		hexes.slice(0, 8),
