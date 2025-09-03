@@ -2,7 +2,7 @@ import { describe, test } from "vitest"
 import { Based } from "./based.ts"
 import { base64Space } from "./space.ts"
 
-describe("Based", () => {
+describe.concurrent("Based", () => {
 	const base2 = new Based("10", 2n, base64Space.slice(0, 2))
 	const base36 = new Based("10", 36n, base64Space.slice(0, 36))
 
