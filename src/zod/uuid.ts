@@ -1,16 +1,22 @@
 import { z } from "zod"
 import { base64Space } from "../space.ts"
 
-export const uuidInputSchema: z.ZodObject<{
-base: z.ZodDefault<z.ZodNumber>
-space: z.ZodDefault<z.ZodString>
-},"strip",z.ZodTypeAny,{
-base: number
-space: string
-},{
-base?: number|undefined
-space?: string|undefined
-}> = z.object({
+export const uuidInputSchema: z.ZodObject<
+	{
+		base: z.ZodDefault<z.ZodNumber>
+		space: z.ZodDefault<z.ZodString>
+	},
+	"strip",
+	z.ZodTypeAny,
+	{
+		base: number
+		space: string
+	},
+	{
+		base?: number | undefined
+		space?: string | undefined
+	}
+> = z.object({
 	base: z.number().describe("The base of the UUID to generate").default(16),
 	space: z
 		.string()
@@ -18,10 +24,16 @@ space?: string|undefined
 		.default(base64Space),
 })
 
-export const uuidOutputSchema: z.ZodObject<{
-uuid: z.ZodString
-},"strip",z.ZodTypeAny,{
-uuid: string
-},{
-uuid: string
-}> = z.object({ uuid: z.string() })
+export const uuidOutputSchema: z.ZodObject<
+	{
+		uuid: z.ZodString
+	},
+	"strip",
+	z.ZodTypeAny,
+	{
+		uuid: string
+	},
+	{
+		uuid: string
+	}
+> = z.object({ uuid: z.string() })
