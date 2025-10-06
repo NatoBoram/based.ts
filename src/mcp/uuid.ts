@@ -8,7 +8,7 @@ type Callback = ToolCallback<typeof uuidInputSchema.shape>
 
 export const uuid: Callback = (({ base, space }) => {
 	const bytes = getRandomBytes(16)
-	const based = bytesToBase(bytes, base, space)
+	const based = bytesToBase(bytes, BigInt(base), space)
 
 	const output: z.infer<typeof uuidOutputSchema> = { uuid: based }
 
