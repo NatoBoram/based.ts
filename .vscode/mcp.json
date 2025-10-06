@@ -1,5 +1,10 @@
 {
 	"servers": {
+		"based": {
+			"args": ["src/main.ts", "mcp", "stdio"],
+			"command": "node",
+			"type": "stdio"
+		},
 		"context7": { "type": "sse", "url": "https://mcp.context7.com/sse" },
 		"deepwiki": { "type": "sse", "url": "https://mcp.deepwiki.com/sse" },
 		"github": { "type": "http", "url": "https://api.githubcopilot.com/mcp" },
