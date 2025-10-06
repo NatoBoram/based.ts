@@ -5,9 +5,5 @@
 		"isolatedDeclarations": false
 	},
 	"include": ["."],
-	"references": [
-		{
-			"path": "../../tsconfig.json"
-		}
-	]
+	"files": ["../space.ts"]
 }

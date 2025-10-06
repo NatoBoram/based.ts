@@ -40,7 +40,7 @@
 	},
 	"repository": "github:NatoBoram/based.ts",
 	"scripts": {
-		"build": "tsgo",
+		"build": "tsgo --build",
 		"clean": "rm -rf coverage dist docs node_modules tsconfig.tsbuildinfo",
 		"dev": "node ./src/main.ts",
 		"docs": "typedoc",
@@ -55,7 +55,7 @@
 		"test:watch": "vitest"
 	},
 	"dependencies": {
-		"@modelcontextprotocol/sdk": "^1.18",
+		"@modelcontextprotocol/sdk": "^1.19.1",
 		"commander": "^14.0.0",
 		"cors": "^2.8.5",
 		"express": "^5.1.0",
