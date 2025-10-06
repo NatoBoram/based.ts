@@ -60,5 +60,6 @@
 		"skipDefaultLibCheck": true,
 		"skipLibCheck": true
 	},
-	"include": ["src"]
+	"include": ["src"],
+	"references": [{ "path": "./src/zod/tsconfig.json" }]
 }

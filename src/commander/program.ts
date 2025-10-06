@@ -3,6 +3,8 @@ import { createCommand } from "commander"
 import pkg from "../../package.json" with { type: "json" }
 import { base64Space } from "../space.ts"
 import { convert } from "./convert.ts"
+import { http } from "./http.ts"
+import { stdio } from "./stdio.ts"
 import { uuid } from "./uuid.ts"
 
 const { bin, version, description } = pkg
@@ -43,3 +45,11 @@ program
 	.option("--base <base>", "The base of the UUID to generate", "16")
 	.option("--space <space>", "The space of the UUID to generate", base64Space)
 	.action(uuid)
+
+const mcp = program.command("mcp").description("Start a MCP server")
+mcp
+	.command("http")
+	.description("Start a MCP server over HTTP")
+	.option("--port <port>", "The port to listen to", "3000")
+	.action(http)
+mcp.command("stdio").description("Start a MCP server over stdio").action(stdio)
