@@ -45,7 +45,7 @@
 		"dev": "node ./src/main.ts",
 		"docker": "pnpm run docker:build && pnpm run docker:run",
 		"docker:build": "docker build -t based.ts .",
-		"docker:kill": "docker ps --format '{{.Image}} {{.ID}}' | grep based.ts | awk '{print $2}' | xargs docker kill",
+		"docker:kill": "docker ps --format '{{.Image}} {{.ID}}' | grep based.ts | awk '{print $2}' | xargs -r docker kill",
 		"docker:run": "docker run based.ts",
 		"docs": "typedoc",
 		"format": "prettier --write .",
