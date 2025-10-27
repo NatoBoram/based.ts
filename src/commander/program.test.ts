@@ -23,9 +23,8 @@ describe.concurrent("program", () => {
 	test("mcp", ({ expect }) => {
 		const mcp = program.commands.find(cmd => cmd.name() === "mcp")
 		expect(mcp).toBeDefined()
-		if (!mcp) throw new Error("mcp command not found")
 
-		const command = mcp.commands.map(cmd => cmd.name())
+		const command = mcp?.commands.map(cmd => cmd.name())
 		expect(command).toContain("http")
 		expect(command).toContain("stdio")
 	})
