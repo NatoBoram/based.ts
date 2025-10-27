@@ -1,0 +1,38 @@
+name: Docs
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    permissions:
+      contents: read
+
+    if: github.actor != 'nektos/act'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+      - uses: actions/setup-node@v5
+        with:
+          node-version: latest
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm run build
+
+      - run: pnpm run docs
+      - run: pnpm run test:coverage
+      - run: cp --force --recursive coverage docs/coverage
+
+      - uses: actions/upload-pages-artifact@v4@v4
+        with:
+          path: docs
