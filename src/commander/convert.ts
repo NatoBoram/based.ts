@@ -25,10 +25,10 @@ export function convert(input: string, options: ConvertOptions): void {
 }
 
 function parseConvertOptions(options: ConvertOptions): ParsedConvertOptions {
-	const fromBase = BigInt(parseInt(options.fromBase))
-	const toBase = BigInt(parseInt(options.toBase))
-	const fromSpace = options.fromSpace
-	const toSpace = options.toSpace
-
-	return { fromBase, fromSpace, toBase, toSpace }
+	return {
+		fromBase: BigInt(parseInt(options.fromBase)),
+		fromSpace: options.fromSpace,
+		toBase: BigInt(parseInt(options.toBase)),
+		toSpace: options.toSpace,
+	}
 }
