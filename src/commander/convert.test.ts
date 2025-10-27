@@ -1,5 +1,5 @@
 import { afterAll, afterEach, describe, test, vi } from "vitest"
-import { base64Space } from "../space.ts"
+import { base64Space } from "../consts/space.ts"
 import { convert } from "./convert.ts"
 
 describe("convert", () => {

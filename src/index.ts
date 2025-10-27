@@ -1,6 +1,6 @@
 export * from "./based.ts"
 export * from "./bytes.ts"
-export * from "./space.ts"
+export * from "./consts/space.ts"
 export * from "./to_base.ts"
 export * from "./to_bigint.ts"
 export * from "./to_bytes.ts"

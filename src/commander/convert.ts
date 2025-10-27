@@ -15,15 +15,6 @@ interface ParsedConvertOptions {
 	readonly toSpace: string
 }
 
-function parseConvertOptions(options: ConvertOptions): ParsedConvertOptions {
-	const fromBase = BigInt(parseInt(options.fromBase))
-	const toBase = BigInt(parseInt(options.toBase))
-	const fromSpace = options.fromSpace
-	const toSpace = options.toSpace
-
-	return { fromBase, fromSpace, toBase, toSpace }
-}
-
 export function convert(input: string, options: ConvertOptions): void {
 	const parsed = parseConvertOptions(options)
 
@@ -31,4 +22,13 @@ export function convert(input: string, options: ConvertOptions): void {
 	const based = toBase(bigInt, parsed.toBase, parsed.toSpace)
 
 	console.log(based)
+}
+
+function parseConvertOptions(options: ConvertOptions): ParsedConvertOptions {
+	return {
+		fromBase: BigInt(parseInt(options.fromBase)),
+		fromSpace: options.fromSpace,
+		toBase: BigInt(parseInt(options.toBase)),
+		toSpace: options.toSpace,
+	}
 }

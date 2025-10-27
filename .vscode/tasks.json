@@ -1,0 +1,50 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": { "kind": "build", "isDefault": true },
+			"problemMatcher": [],
+			"label": "pnpm run build",
+			"detail": "tsgo --build"
+		},
+		{
+			"type": "npm",
+			"script": "format",
+			"problemMatcher": [],
+			"label": "pnpm run format",
+			"detail": "prettier --write ."
+		},
+		{
+			"type": "npm",
+			"script": "lint",
+			"problemMatcher": [],
+			"label": "pnpm run lint",
+			"detail": "eslint . && markdownlint-cli2 \"**/*.md\" && prettier --check ."
+		},
+		{
+			"type": "npm",
+			"script": "lint:fix",
+			"problemMatcher": [],
+			"label": "pnpm run lint:fix",
+			"detail": "eslint --fix --quiet .; markdownlint-cli2 \"**/*.md\" --fix; prettier --list-different --write ."
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"group": { "kind": "test", "isDefault": true },
+			"problemMatcher": [],
+			"label": "pnpm run test",
+			"detail": "vitest run"
+		},
+		{
+			"type": "npm",
+			"script": "test:coverage",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "pnpm run test:coverage",
+			"detail": "vitest run --coverage"
+		}
+	]
+}

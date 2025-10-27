@@ -12,9 +12,9 @@
 
 		/* Modules */
 		"module": "NodeNext",
-		"rootDir": "./src",
+		"rootDir": "src",
 		"moduleResolution": "NodeNext",
-		"typeRoots": ["./node_modules/@types", "./src/types"],
+		"typeRoots": ["node_modules/@types", "src/types"],
 		"rewriteRelativeImportExtensions": true,
 		"resolvePackageJsonExports": true,
 		"resolvePackageJsonImports": true,
@@ -26,7 +26,7 @@
 		"declaration": true,
 		"declarationMap": true,
 		"sourceMap": true,
-		"outDir": "./dist",
+		"outDir": "dist",
 
 		/* Interop Constraints */
 		"isolatedModules": true,
@@ -60,5 +60,10 @@
 		"skipDefaultLibCheck": true,
 		"skipLibCheck": true
 	},
-	"include": ["src"]
+	"include": ["src"],
+	"exclude": ["src/consts", "src/zod"],
+	"references": [
+		{ "path": "src/consts/tsconfig.json" },
+		{ "path": "src/zod/tsconfig.json" }
+	]
 }

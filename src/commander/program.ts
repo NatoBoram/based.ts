@@ -1,16 +1,17 @@
 import type { Command } from "commander"
 import { createCommand } from "commander"
 import pkg from "../../package.json" with { type: "json" }
-import { base64Space } from "../space.ts"
+import { base64Space } from "../consts/space.ts"
 import { convert } from "./convert.ts"
+import { http } from "./http.ts"
+import { stdio } from "./stdio.ts"
 import { uuid } from "./uuid.ts"
 
 const { bin, version, description } = pkg
 
 const name = Object.keys(bin).find(Boolean)
-if (!name) {
-	throw new Error("No executable name found in package.json")
-}
+if (!name)
+	throw new Error("No executable name found in package.json", { cause: pkg })
 
 export const program: Command = createCommand()
 program.name(name).description(description).version(version)
@@ -43,3 +44,11 @@ program
 	.option("--base <base>", "The base of the UUID to generate", "16")
 	.option("--space <space>", "The space of the UUID to generate", base64Space)
 	.action(uuid)
+
+const mcp = program.command("mcp").description("Start a MCP server")
+mcp
+	.command("http")
+	.description("Start a MCP server over HTTP")
+	.option("--port <port>", "The port to listen to", "3000")
+	.action(http)
+mcp.command("stdio").description("Start a MCP server over stdio").action(stdio)

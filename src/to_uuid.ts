@@ -1,5 +1,5 @@
 import type { UUID } from "node:crypto"
-import { base64Space } from "./space.ts"
+import { base64Space } from "./consts/space.ts"
 import { toBase } from "./to_base.ts"
 import { basedToBigInt, bytesToBigInt } from "./to_bigint.ts"
 
@@ -10,29 +10,6 @@ export function basedToUuid(
 ): UUID {
 	const bigInt = basedToBigInt(based, base, space)
 	return bigIntToUuid(bigInt)
-}
-
-/**
- * Trims a string to exactly 32 characters long, padding with leading zeroes if
- * necessary.
- *
- * @param hexes The hexadecimal string to process.
- * @returns A 32-character hexadecimal string.
- *
- * @example
- * trimUuidHexes("1") // "00000000000000000000000000000001"
- */
-export function trimUuidHexes(hexes: string): string {
-	if (hexes.length < 32) return hexes.padStart(32, "0")
-	if (hexes.length > 32) return hexes.slice(-32)
-	return hexes
-}
-
-function isUuid(uuid: string): uuid is UUID {
-	const regex =
-		/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
-
-	return regex.test(uuid)
 }
 
 export function bigIntToUuid(bigInt: bigint): UUID {
@@ -56,4 +33,27 @@ export function bigIntToUuid(bigInt: bigint): UUID {
 export function bytesToUuid(bytes: Uint8Array): UUID {
 	const bigInt = bytesToBigInt(bytes)
 	return bigIntToUuid(bigInt)
+}
+
+function isUuid(uuid: string): uuid is UUID {
+	const regex =
+		/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+
+	return regex.test(uuid)
+}
+
+/**
+ * Trims a string to exactly 32 characters long, padding with leading zeroes if
+ * necessary.
+ *
+ * @param hexes The hexadecimal string to process.
+ * @returns A 32-character hexadecimal string.
+ *
+ * @example
+ * trimUuidHexes("1") // "00000000000000000000000000000001"
+ */
+export function trimUuidHexes(hexes: string): string {
+	if (hexes.length < 32) return hexes.padStart(32, "0")
+	if (hexes.length > 32) return hexes.slice(-32)
+	return hexes
 }
