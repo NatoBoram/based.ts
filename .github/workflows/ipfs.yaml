@@ -10,22 +10,7 @@ on:
 
 jobs:
   build_ipfs:
-    permissions:
-      contents: read
-
-    if: github.actor != 'nektos/act'
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v5
-      - uses: ./.github/workflows/docs.yaml
-      - uses: actions/upload-artifact@v5
-        with:
-          name: docs
-          path: docs
-          compression-level: 9
-          if-no-files-found: error
+    uses: ./.github/workflows/docs.yaml
 
   deploy_ipfs:
     permissions:
@@ -34,6 +19,8 @@ jobs:
       statuses: write
 
     needs: build_ipfs
+
+    if: github.actor != 'nektos/act'
 
     runs-on: ubuntu-latest
 
