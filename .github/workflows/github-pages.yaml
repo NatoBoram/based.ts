@@ -7,7 +7,18 @@ on:
 
 jobs:
   build_pages:
-    uses: ./.github/workflows/docs.yaml
+    permissions:
+      contents: read
+
+    if: github.actor != 'nektos/act'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/workflows/docs.yaml
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
 
   deploy_pages:
     permissions:
@@ -25,5 +36,3 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: docs
