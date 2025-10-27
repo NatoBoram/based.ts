@@ -26,7 +26,7 @@ jobs:
       - uses: actions/download-artifact@v5
         with:
           github-token: ${{ github.token }}
-          name: github-pages
+          name: docs
           path: docs
           run-id: ${{ github.event.workflow_run.id }}
 

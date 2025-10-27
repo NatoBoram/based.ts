@@ -8,12 +8,32 @@ on:
       - completed
 
 jobs:
+  build_pages:
+    permissions:
+      contents: read
+
+    if: github.actor != 'nektos/act' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'main'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          github-token: ${{ github.token }}
+          name: docs
+          path: docs
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
   deploy_pages:
     permissions:
       pages: write
       id-token: write
 
-    if: github.actor != 'nektos/act' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'main'
+    needs: build_pages
 
     runs-on: ubuntu-latest
 
