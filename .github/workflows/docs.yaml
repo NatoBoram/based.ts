@@ -1,12 +1,7 @@
 name: Docs
 
 on:
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
+  workflow_call:
 
 jobs:
   docs:
@@ -33,8 +28,7 @@ jobs:
       - run: pnpm run test:coverage
       - run: cp --force --recursive coverage docs/coverage
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-pages-artifact@v4
         with:
           name: docs
           path: docs
-          if-no-files-found: error
