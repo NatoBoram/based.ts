@@ -8,8 +8,6 @@ jobs:
     permissions:
       contents: read
 
-    if: github.actor != 'nektos/act'
-
     runs-on: ubuntu-latest
 
     steps:
@@ -27,8 +25,3 @@ jobs:
       - run: pnpm run docs
       - run: pnpm run test:coverage
       - run: cp --force --recursive coverage docs/coverage
-
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          name: docs
-          path: docs
