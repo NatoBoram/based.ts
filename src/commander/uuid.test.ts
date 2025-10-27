@@ -1,6 +1,6 @@
 import { afterAll, afterEach, describe, test, vi } from "vitest"
 import * as bytesModule from "../bytes.ts"
-import { base64Space } from "../space.ts"
+import { base64Space } from "../consts/space.ts"
 import { uuid } from "./uuid.ts"
 
 describe("uuid", () => {

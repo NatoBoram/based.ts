@@ -1,13 +1,13 @@
 import { getRandomBytes } from "../bytes.ts"
 import { bytesToBase } from "../to_base.ts"
 
-interface UuidOptions {
-	readonly base: string
+interface ParsedUuidOptions {
+	readonly base: bigint
 	readonly space: string
 }
 
-interface ParsedUuidOptions {
-	readonly base: bigint
+interface UuidOptions {
+	readonly base: string
 	readonly space: string
 }
 

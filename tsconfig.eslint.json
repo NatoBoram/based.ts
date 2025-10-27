@@ -1,6 +1,7 @@
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": { "checkJs": true },
-	"files": ["vitest.config.ts"],
-	"include": ["eslint.config.ts", "src", "vitest.config.ts"]
+	"include": ["eslint.config.ts", "src", "vitest.config.ts"],
+	"exclude": [],
+	"references": []
 }

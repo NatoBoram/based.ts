@@ -5,10 +5,13 @@ import { uuidInputSchema, uuidOutputSchema } from "../zod/uuid.ts"
 import { convert } from "./convert.ts"
 import { uuid } from "./uuid.ts"
 
-const { name, version, homepage } = pkg
+const { name, version, homepage, bin } = pkg
+const exe = Object.keys(bin).find(Boolean)
+if (!exe)
+	throw new Error("No executable name found in package.json", { cause: pkg })
 
 export const mcp: McpServer = new McpServer({
-	name: "basedts",
+	name: exe,
 	title: name,
 	version,
 	websiteUrl: homepage,

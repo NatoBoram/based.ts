@@ -1,7 +1,16 @@
 import type { UUID } from "node:crypto"
-import { base64Space } from "./space.ts"
+import { base64Space } from "./consts/space.ts"
 import { bytesToBigInt, utf8ToBigInt, uuidToBigInt } from "./to_bigint.ts"
 import type { TypedUintArray } from "./typed_array.ts"
+
+export function bytesToBase(
+	bytes: TypedUintArray,
+	base: bigint,
+	space: string = base64Space,
+): string {
+	const bigInt = bytesToBigInt(bytes)
+	return toBase(bigInt, base, space)
+}
 
 /** Convert a number to a string in a given base. */
 export function toBase(
@@ -40,15 +49,6 @@ export function utf8ToBase(
 	space: string = base64Space,
 ): string {
 	const bigInt = utf8ToBigInt(value)
-	return toBase(bigInt, base, space)
-}
-
-export function bytesToBase(
-	bytes: TypedUintArray,
-	base: bigint,
-	space: string = base64Space,
-): string {
-	const bigInt = bytesToBigInt(bytes)
 	return toBase(bigInt, base, space)
 }
 

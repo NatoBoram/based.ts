@@ -8,12 +8,6 @@ interface ParsedHttpOptions {
 	readonly port: number
 }
 
-function parseHttpOptions(options: HttpOptions): ParsedHttpOptions {
-	return {
-		port: parseInt(options.port, 10),
-	}
-}
-
 export function http(options: HttpOptions): void {
 	const { port } = parseHttpOptions(options)
 
@@ -25,4 +19,10 @@ export function http(options: HttpOptions): void {
 			console.error("Server error:", error)
 			process.exit(1)
 		})
+}
+
+function parseHttpOptions(options: HttpOptions): ParsedHttpOptions {
+	return {
+		port: parseInt(options.port, 10),
+	}
 }

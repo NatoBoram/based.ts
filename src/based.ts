@@ -1,5 +1,5 @@
 import type { UUID } from "node:crypto"
-import { base64Space } from "./space.ts"
+import { base64Space } from "./consts/space.ts"
 import { toBase, utf8ToBase, uuidToBase } from "./to_base.ts"
 import { basedToBigInt } from "./to_bigint.ts"
 import { basedToUtf8 } from "./to_utf-8.ts"
@@ -9,9 +9,9 @@ import { basedToUuid } from "./to_uuid.ts"
  * bases often. Otherwise, just use the provided utilities. You can provide a
  * custom number's space */
 export class Based {
-	readonly value: string
 	readonly base: bigint
 	readonly space: string
+	readonly value: string
 
 	constructor(value: string, base: bigint, space: string = base64Space) {
 		this.value = value
@@ -31,14 +31,6 @@ export class Based {
 	static fromUuid(uuid: UUID, base = 16n, space: string = base64Space): Based {
 		const based = uuidToBase(uuid, base, space)
 		return new Based(based, base, space)
-	}
-
-	toUuid(): UUID {
-		return basedToUuid(this.value, this.base, this.space)
-	}
-
-	toUtf8(): string {
-		return basedToUtf8(this.value, this.base, this.space)
 	}
 
 	divide(based: Based): Based {
@@ -73,5 +65,13 @@ export class Based {
 		const bigInt = basedToBigInt(this.value, this.base, this.space)
 		const value = toBase(bigInt, base, space)
 		return new Based(value, base, space)
+	}
+
+	toUtf8(): string {
+		return basedToUtf8(this.value, this.base, this.space)
+	}
+
+	toUuid(): UUID {
+		return basedToUuid(this.value, this.base, this.space)
 	}
 }
