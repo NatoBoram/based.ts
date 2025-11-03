@@ -1,5 +1,5 @@
-import { getRandomBytes } from "../bytes.ts"
-import { bytesToBase } from "../to_base.ts"
+import { getRandomBytes } from "../adapters/bytes.ts"
+import { bytesToBase } from "../adapters/to_base.ts"
 
 interface ParsedUuidOptions {
 	readonly base: bigint

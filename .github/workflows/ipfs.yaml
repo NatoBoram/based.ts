@@ -26,7 +26,6 @@ jobs:
           node-version: latest
           cache: pnpm
       - run: pnpm install
-      - run: pnpm run build
 
       - run: pnpm run docs
       - run: pnpm run test:coverage

@@ -1,0 +1,9 @@
+{
+	"extends": "../../tsconfig.json",
+	"include": ["."],
+	"exclude": [],
+	"references": [
+		{ "path": "../adapters/tsconfig.json" },
+		{ "path": "../mcp/tsconfig.json" }
+	]
+}

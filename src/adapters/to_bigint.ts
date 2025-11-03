@@ -1,5 +1,5 @@
 import type { UUID } from "node:crypto"
-import { base64Space } from "./consts/space.ts"
+import { base64Space } from "../consts/space.ts"
 import { utf8ToBytes } from "./to_bytes.ts"
 import type { TypedUintArray } from "./typed_array.ts"
 
