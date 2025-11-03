@@ -10,36 +10,56 @@ This is a TypeScript library for working with arbitrary numerical bases, availab
 - **Pattern**: `source → bigint → target` (e.g., `utf8ToBigInt()` → `toBase()`).
 - **`space` parameter**: Custom character sets for representing digits (default: `base64Space` with 64 chars).
 
-### Core Components
+### Project References Architecture
 
-- `Based` class (`src/based.ts`): Main API for chaining arithmetic operations.
-- `to_*.ts` files: Conversion utilities organized by target type.
-- `space.ts`: Defines character spaces for different bases.
-- `commander`: CLI implementation using Commander.js.
-- `mcp`: Model Context Protocol server implementation.
+The project uses **TypeScript project references** for modular builds, mirroring Go's `cmd/*` pattern:
 
-### Code Organization
+```txt
+Root (tsconfig.json)          # Assembles index.ts + main.ts
+├── adapters/                 # Core conversion logic
+│   └── → consts
+├── commander/                # CLI implementation
+│   ├── → adapters
+│   └── → mcp
+└── consts/                   # Constants (leaf, no deps)
 
-- `src`
-  - `based.ts`: Main `Based` class with arithmetic operations.
-  - `to_base.ts`, `to_bigint.ts`, etc.: Core conversion logic.
-  - `commander/`: CLI commands (`convert`, `uuid`, `http`, `stdio`).
-  - `mcp/`: MCP server implementation.
-    - `app.ts`: Express server for HTTP transport.
-    - `mcp.ts`: `McpServer` instance and tool registration.
-    - `convert.ts`, `uuid.ts`: Tool implementation logic.
-  - `zod/`: Zod schemas for MCP tool input/output validation.
+Not referenced by root:
+├── mcp/                      # MCP server (used by commander)
+│   ├── → adapters
+│   └── → zod
+└── zod/                      # Schemas (used by mcp)
+    └── → consts
+```
+
+- **Root compiles**: Only #file:../src/index.ts (library) and #file:../src/main.ts (CLI entrypoint)
+- **Subprojects**: Each has `tsconfig.json` with `references` array, all emit to shared #file:../dist
+- **Build orchestration**: `pnpm run build` uses `tsgo --build` which honors reference graph
+- **Individual builds**: Can compile any leaf project independently (e.g., `tsc -b src/adapters`)
+
+### Code Organization & Barrel Exports
+
+- #file:../src/index.ts : Re-exports from #file:../src/adapters/index.ts and #file:../src/consts/index.ts (curated public API)
+- #file:../src/main.ts : CLI entrypoint using Commander.js
+- #file:../src/adapters : Core conversion functions (#file:../src/adapters/to_base.ts , #file:../src/adapters/to_bigint.ts , #file:../src/adapters/based.ts , etc.)
+- #file:../src/commander : CLI commands (#file:../src/commander/convert.ts , #file:../src/commander/uuid.ts , #file:../src/commander/http.ts , #file:../src/commander/stdio.ts )
+- #file:../src/mcp : MCP server (#file:../src/mcp/mcp.ts for registration, #file:../src/mcp/convert.ts / #file:../src/mcp/uuid.ts for tool logic)
+- #file:../src/zod : Zod schemas with explicit types for `isolatedDeclarations` compatibility
+- #file:../src/consts : Constants like `base64Space`
+
+Each subproject has its own `index.ts` to control exports—only what's in the barrel is public.
 
 ## Development Workflow
 
 ### Build & Test Commands
 
 ```sh
-pnpm run build      # Compile TypeScript using tsgo
-pnpm run test       # Run Vitest tests
-pnpm run lint       # ESLint + MarkdownLint + Prettier
-pnpm run docs       # Generate TypeDoc documentation
+pnpm run build # Compile TypeScript using tsgo --build (respects project references)
+pnpm run test  # Run Vitest tests
+pnpm run lint  # ESLint + MarkdownLint + Prettier (works without build)
+pnpm run docs  # Generate TypeDoc documentation (runs predocs build hook)
 ```
+
+**First-time setup**: After cloning, run `pnpm install && pnpm run build` to generate `.d.ts` files for project references.
 
 ### CLI & MCP Server Testing
 
@@ -78,46 +98,19 @@ throw new Error("Invalid space for this base", {
 
 - **File naming**: `*.test.ts` files co-located with source files.
 - **Test framework**: Uses `vitest` with `describe.concurrent()` for parallel execution.
-- **Detailed patterns**: See `.github/instructions/vitest.instructions.md` for comprehensive testing conventions.
+- **Detailed patterns**: See #file:instructions/vitest.instructions.md for comprehensive testing conventions.
 
 ### Import Conventions
 
 - Use `.ts` extensions in all relative imports.
 - Separate type-only imports: `import type { UUID } from "node:crypto"`.
 
-## Critical Implementation Details
+## Module-Specific Details
 
-### MCP Server
+For implementation patterns specific to each module, see:
 
-- The MCP server is built with `@modelcontextprotocol/sdk`.
-- `src/mcp/mcp.ts` is where tools are registered with the `McpServer` instance.
-- Tool schemas are defined using `zod` in the `src/zod/` directory.
-- The server supports both HTTP and stdio transports, configured in `src/commander/http.ts` and `src/commander/stdio.ts`.
-- When adding a new tool, you must:
-  1. Create a Zod schema in `src/zod/`.
-  2. Create the tool's implementation file in `src/mcp/`.
-  3. Register the tool in `src/mcp/mcp.ts`.
-
-### MCP Tool Implementation Pattern
-
-```ts
-import type { ToolCallback } from "@modelcontextprotocol/sdk/server/mcp.js"
-import type { z } from "zod"
-
-type Callback = ToolCallback<typeof inputSchema.shape>
-
-export const toolName: Callback = (parsed => {
-	// Tool logic here
-	const output: z.infer<typeof outputSchema> = { result: "value" }
-	return {
-		content: [{ type: "text", text: JSON.stringify(output) }],
-		structuredContent: output,
-	}
-}) satisfies Callback
-```
-
-### BigInt Conversion Pattern
-
-- **Always convert number inputs to BigInt** for MCP tools: `BigInt(parsed.fromBase)`
-- **Zod schemas use `z.number()`** but tool implementations convert to `bigint`
-- This avoids JSON serialization issues with `bigint` defaults in MCP protocol
+- #file:instructions/adapters.instructions.md : Core conversion logic patterns
+- #file:instructions/commander.instructions.md : CLI command implementation with Commander.js
+- #file:instructions/mcp.instructions.md : MCP server and tool implementation
+- #file:instructions/zod.instructions.md : Schema definitions with `isolatedDeclarations` support
+- #file:instructions/vitest.instructions.md : Testing conventions and patterns

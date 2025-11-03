@@ -1,5 +1,5 @@
 import { describe, test } from "vitest"
-import { base64Space } from "./consts/space.ts"
+import { base64Space } from "../consts/space.ts"
 import { basedToBigInt, bytesToBigInt } from "./to_bigint.ts"
 
 describe.concurrent("bytesToBigInt", () => {

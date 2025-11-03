@@ -1,5 +1,5 @@
-import { toBase } from "../to_base.ts"
-import { basedToBigInt } from "../to_bigint.ts"
+import { toBase } from "../adapters/to_base.ts"
+import { basedToBigInt } from "../adapters/to_bigint.ts"
 
 interface ConvertOptions {
 	readonly fromBase: string

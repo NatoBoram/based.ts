@@ -1,5 +1,5 @@
 import type { UUID } from "node:crypto"
-import { base64Space } from "./consts/space.ts"
+import { base64Space } from "../consts/space.ts"
 import { toBase } from "./to_base.ts"
 import { basedToBigInt, bytesToBigInt } from "./to_bigint.ts"
 

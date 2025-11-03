@@ -41,12 +41,14 @@
 	"repository": "github:NatoBoram/based.ts",
 	"scripts": {
 		"build": "tsgo --build",
+		"build:watch": "tsgo --build --watch",
 		"clean": "rm -rf coverage dist docs node_modules tsconfig.tsbuildinfo",
 		"dev": "node ./src/main.ts",
 		"docker": "pnpm run docker:build && pnpm run docker:run",
 		"docker:build": "docker build -t based.ts .",
 		"docker:kill": "docker ps --format '{{.Image}} {{.ID}}' | grep based.ts | awk '{print $2}' | xargs -r docker kill",
 		"docker:run": "docker run based.ts",
+		"predocs": "pnpm run build",
 		"docs": "typedoc",
 		"format": "prettier --write .",
 		"inspector:http": "mcp-inspector --transport http --server-url \"http://localhost:3000/mcp\" node src/main.ts mcp http",
@@ -59,7 +61,7 @@
 		"test:watch": "vitest"
 	},
 	"dependencies": {
-		"@modelcontextprotocol/sdk": "^1.19.1",
+		"@modelcontextprotocol/sdk": "^1.20.2",
 		"commander": "^14.0.0",
 		"cors": "^2.8.5",
 		"express": "^5.1.0",
