@@ -2,5 +2,5 @@
 	"extends": "../../tsconfig.json",
 	"include": ["."],
 	"exclude": [],
-	"references": []
+	"references": [{ "path": "../consts/tsconfig.json" }]
 }

@@ -1,5 +1,8 @@
-import { z } from "zod"
+import { z } from "zod/v3"
 import { base64Space } from "../consts/space.ts"
+
+export type ConvertInput = z.infer<typeof convertInputSchema>
+export type ConvertOutput = z.infer<typeof convertOutputSchema>
 
 export const convertInputSchema = z.object({
 	number: z.string().describe("The number to convert"),
@@ -18,5 +21,7 @@ export const convertInputSchema = z.object({
 		.describe("The space to convert the number to")
 		.default(base64Space),
 })
+export const convertInputShape = convertInputSchema.shape
 
 export const convertOutputSchema = z.object({ converted: z.string() })
+export const convertOutputShape = convertOutputSchema.shape
