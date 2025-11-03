@@ -1,5 +1,5 @@
 import { afterAll, afterEach, describe, test, vi } from "vitest"
-import * as bytesModule from "../bytes.ts"
+import * as bytesModule from "../adapters/bytes.ts"
 import { base64Space } from "../consts/space.ts"
 import { uuid } from "./uuid.ts"
 
