@@ -1,6 +1,6 @@
 # [`@natoboram/based.ts`](https://github.com/NatoBoram/based.ts)
 
-[![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml) [![Docker CI](https://github.com/NatoBoram/based.ts/actions/workflows/docker.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/docker.yaml) [![CodeQL](https://github.com/NatoBoram/based.ts/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-code-scanning/codeql) [![Coverage](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fnatoboram.github.io%2Fbased.ts%2Fcoverage%2Fcoverage-summary.json&query=total.branches.pct&suffix=%25&logo=Vitest&label=Coverage&color=acd268)](https://natoboram.github.io/based.ts/coverage) [![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![IPFS](https://img.shields.io/website?url=https%3A%2F%2Fk51qzi5uqu5dg6qr4avntelsqd6iljwbsvf24h6qxh0dcl5i00x86hhip22cc5.ipns.dweb.link&up_color=6BC4CE&down_color=E9502F&logo=ipfs&label=IPFS&labelColor=073A53)](https://k51qzi5uqu5dg6qr4avntelsqd6iljwbsvf24h6qxh0dcl5i00x86hhip22cc5.ipns.dweb.link) [![GitHub Downloads](https://img.shields.io/github/downloads/NatoBoram/based.ts/total?logo=github)](https://github.com/NatoBoram/based.ts/releases) [![NPM Downloads](https://img.shields.io/npm/dt/%40natoboram/based.ts?logo=npm)](https://www.npmjs.com/package/@natoboram/based.ts) [![Dependabot Updates](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates) [![Wakapi](https://wakapi.dev/api/badge/NatoBoram/interval:any/project:based.ts)](https://wakapi.dev/summary?interval=any&project=based.ts) [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/NatoBoram/based.ts?logo=CodeRabbit&logoColor=FF570A&label=CodeRabbit%20Reviews&labelColor=171717&color=FF570A)](https://github.com/NatoBoram/based.ts/pulls?q=reviewed-by%3Acoderabbitai%5Bbot%5D)
+[![Node.js CI](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/node.js.yaml) [![Docker CI](https://github.com/NatoBoram/based.ts/actions/workflows/docker.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/docker.yaml) [![CodeQL](https://github.com/NatoBoram/based.ts/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-code-scanning/codeql) [![Coverage](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fnatoboram.github.io%2Fbased.ts%2Fcoverage%2Fcoverage-summary.json&query=total.branches.pct&suffix=%25&logo=Vitest&label=Coverage&color=acd268)](https://natoboram.github.io/based.ts/coverage) [![GitHub Pages](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/github-pages.yaml) [![IPFS](https://img.shields.io/website?url=https%3A%2F%2Fk51qzi5uqu5dg6qr4avntelsqd6iljwbsvf24h6qxh0dcl5i00x86hhip22cc5.ipns.dweb.link&up_color=6BC4CE&down_color=E9502F&logo=ipfs&label=IPFS&labelColor=073A53)](https://k51qzi5uqu5dg6qr4avntelsqd6iljwbsvf24h6qxh0dcl5i00x86hhip22cc5.ipns.dweb.link) [![GitHub Downloads](https://img.shields.io/github/downloads/NatoBoram/based.ts/total?logo=github)](https://github.com/NatoBoram/based.ts/releases) [![NPM Downloads](https://img.shields.io/npm/dt/%40natoboram/based.ts?logo=npm)](https://www.npmjs.com/package/@natoboram/based.ts) [![JSR Score](https://jsr.io/badges/@natoboram/based-ts/score)](https://jsr.io/@natoboram/based-ts) [![Dependabot Updates](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/NatoBoram/based.ts/actions/workflows/dependabot/dependabot-updates) [![Wakapi](https://wakapi.dev/api/badge/NatoBoram/interval:any/project:based.ts)](https://wakapi.dev/summary?interval=any&project=based.ts) [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/NatoBoram/based.ts?logo=CodeRabbit&logoColor=FF570A&label=CodeRabbit%20Reviews&labelColor=171717&color=FF570A)](https://github.com/NatoBoram/based.ts/pulls?q=reviewed-by%3Acoderabbitai%5Bbot%5D)
 
 A TypeScript library for working with arbitrary bases.
 
@@ -9,7 +9,8 @@ A TypeScript library for working with arbitrary bases.
 It can be installed globally if you want to convert numbers or generate UUIDs from the terminal.
 
 ```sh
-pnpm install --global @natoboram/based.ts
+pnpm add --global @natoboram/based.ts
+pnpm add --global jsr:@natoboram/based-ts
 ```
 
 ```log
@@ -25,7 +26,6 @@ Options:
   --from-space <space>  The space of the number to convert from (default: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/")
   --to-base <base>      The base to convert to (default: "10")
   --to-space <space>    The space to convert the number to (default: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/")
-  -h, --help            Display help for command
 ```
 
 ```log
@@ -42,7 +42,8 @@ Options:
 ## Library
 
 ```sh
-pnpm install @natoboram/based.ts
+pnpm add @natoboram/based.ts
+pnpm add jsr:@natoboram/based-ts
 ```
 
 ```ts
