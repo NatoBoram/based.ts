@@ -48,6 +48,7 @@
 		"docker:build": "docker build -t based.ts .",
 		"docker:kill": "docker ps --format '{{.Image}} {{.ID}}' | grep based.ts | awk '{print $2}' | xargs -r docker kill",
 		"docker:run": "docker run based.ts",
+		"predocs": "pnpm run build",
 		"docs": "typedoc",
 		"format": "prettier --write .",
 		"inspector:http": "mcp-inspector --transport http --server-url \"http://localhost:3000/mcp\" node src/main.ts mcp http",
