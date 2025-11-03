@@ -41,6 +41,7 @@
 	"repository": "github:NatoBoram/based.ts",
 	"scripts": {
 		"build": "tsgo --build",
+		"build:watch": "tsgo --build --watch",
 		"clean": "rm -rf coverage dist docs node_modules tsconfig.tsbuildinfo",
 		"dev": "node ./src/main.ts",
 		"docker": "pnpm run docker:build && pnpm run docker:run",
