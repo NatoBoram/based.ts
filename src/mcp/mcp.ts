@@ -17,10 +17,7 @@ export const mcp: McpServer = new McpServer({
 	websiteUrl: homepage,
 })
 
-mcp.registerTool<
-	typeof convertInputSchema.shape,
-	typeof convertOutputSchema.shape
->(
+mcp.registerTool(
 	"convert",
 	{
 		title: "Convert",
@@ -32,7 +29,7 @@ mcp.registerTool<
 	convert,
 )
 
-mcp.registerTool<typeof uuidInputSchema.shape, typeof uuidOutputSchema.shape>(
+mcp.registerTool(
 	"uuid",
 	{
 		title: "UUID",

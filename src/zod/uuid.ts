@@ -1,13 +1,24 @@
-import { z } from "zod"
+import type { z, ZodDefault, ZodNumber, ZodString } from "zod/v3"
+import { number, object, string } from "zod/v3"
 import { base64Space } from "../consts/space.ts"
+import type { ObjectType } from "./object_type.ts"
 
-export const uuidInputSchema = z.object({
-	base: z.number().describe("The base of the UUID to generate").default(16),
+export type UuidInput = z.infer<typeof uuidInputSchema>
+export type UuidOutput = z.infer<typeof uuidOutputSchema>
 
-	space: z
-		.string()
+type UuidInputObjectType = ObjectType<{
+	base: ZodDefault<ZodNumber>
+	space: ZodDefault<ZodString>
+}>
+
+export const uuidInputSchema: UuidInputObjectType = object({
+	base: number().describe("The base of the UUID to generate").default(16),
+
+	space: string()
 		.describe("The space of the UUID to generate")
 		.default(base64Space),
 })
 
-export const uuidOutputSchema = z.object({ uuid: z.string() })
+type UuidOutputObjectType = ObjectType<{ uuid: ZodString }>
+
+export const uuidOutputSchema: UuidOutputObjectType = object({ uuid: string() })

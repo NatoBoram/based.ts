@@ -1,5 +1,5 @@
 import { describe, test } from "vitest"
-import { base64Space } from "./consts/space.ts"
+import { base64Space } from "../consts/space.ts"
 import { toBase } from "./to_base.ts"
 
 describe.concurrent("toBase", () => {

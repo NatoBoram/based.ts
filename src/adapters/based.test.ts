@@ -1,6 +1,6 @@
 import { describe, test } from "vitest"
+import { base64Space } from "../consts/space.ts"
 import { Based } from "./based.ts"
-import { base64Space } from "./consts/space.ts"
 
 describe.concurrent("Based", () => {
 	const base2 = new Based("10", 2n, base64Space.slice(0, 2))

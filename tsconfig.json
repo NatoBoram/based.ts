@@ -61,9 +61,10 @@
 		"skipLibCheck": true
 	},
 	"include": ["src"],
-	"exclude": ["src/consts", "src/zod"],
+	"exclude": ["src/*/*"],
 	"references": [
-		{ "path": "src/consts/tsconfig.json" },
-		{ "path": "src/zod/tsconfig.json" }
+		{ "path": "src/adapters/tsconfig.json" },
+		{ "path": "src/commander/tsconfig.json" },
+		{ "path": "src/consts/tsconfig.json" }
 	]
 }

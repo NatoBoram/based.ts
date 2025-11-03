@@ -1,4 +1,4 @@
-import { base64Space } from "./consts/space.ts"
+import { base64Space } from "../consts/space.ts"
 import { basedToBytes, bigIntToBytes } from "./to_bytes.ts"
 import type { TypedUintArray } from "./typed_array.ts"
 
