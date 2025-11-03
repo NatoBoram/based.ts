@@ -1,27 +1,41 @@
-import { z } from "zod/v3"
+import type { ZodDefault, ZodNumber, ZodRawShape, ZodString, z } from "zod/v3"
+import { number, object, string } from "zod/v3"
 import { base64Space } from "../consts/space.ts"
+import type { ObjectType } from "./object_type.ts"
 
 export type ConvertInput = z.infer<typeof convertInputSchema>
 export type ConvertOutput = z.infer<typeof convertOutputSchema>
 
-export const convertInputSchema = z.object({
-	number: z.string().describe("The number to convert"),
+interface ConvertInputRawShape extends ZodRawShape {
+	readonly fromBase: ZodDefault<ZodNumber>
+	readonly fromSpace: ZodDefault<ZodString>
+	readonly number: ZodString
+	readonly toBase: ZodDefault<ZodNumber>
+	readonly toSpace: ZodDefault<ZodString>
+}
 
-	fromBase: z.number().describe("The base of the number").default(10),
+interface ConvertOutputRawShape extends ZodRawShape {
+	readonly converted: ZodString
+}
 
-	fromSpace: z
-		.string()
+export const convertInputSchema: ObjectType<ConvertInputRawShape> = object({
+	number: string().describe("The number to convert"),
+
+	fromBase: number().describe("The base of the number").default(10),
+
+	fromSpace: string()
 		.describe("The space of the number to convert from")
 		.default(base64Space),
 
-	toBase: z.number().describe("The base to convert to").default(10),
+	toBase: number().describe("The base to convert to").default(10),
 
-	toSpace: z
-		.string()
+	toSpace: string()
 		.describe("The space to convert the number to")
 		.default(base64Space),
 })
-export const convertInputShape = convertInputSchema.shape
-
-export const convertOutputSchema = z.object({ converted: z.string() })
-export const convertOutputShape = convertOutputSchema.shape
+export const convertInputShape: ConvertInputRawShape = convertInputSchema.shape
+export const convertOutputSchema: ObjectType<ConvertOutputRawShape> = object({
+	converted: string(),
+})
+export const convertOutputShape: ConvertOutputRawShape =
+	convertOutputSchema.shape
