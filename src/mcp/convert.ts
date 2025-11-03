@@ -1,9 +1,9 @@
 import type { ToolCallback } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { toBase } from "../adapters/to_base.ts"
 import { basedToBigInt } from "../adapters/to_bigint.ts"
-import type { convertInputShape, ConvertOutput } from "../zod/convert.ts"
+import type { convertInputSchema, ConvertOutput } from "../zod/convert.ts"
 
-type Callback = ToolCallback<typeof convertInputShape>
+type Callback = ToolCallback<typeof convertInputSchema.shape>
 
 export const convert: Callback = (parsed => {
 	const bigInt = basedToBigInt(

@@ -1,7 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
 import pkg from "../../package.json" with { type: "json" }
-import { convertInputShape, convertOutputShape } from "../zod/convert.ts"
-import { uuidInputShape, uuidOutputShape } from "../zod/uuid.ts"
+import { convertInputSchema, convertOutputSchema } from "../zod/convert.ts"
+import { uuidInputSchema, uuidOutputSchema } from "../zod/uuid.ts"
 import { convert } from "./convert.ts"
 import { uuid } from "./uuid.ts"
 
@@ -23,20 +23,20 @@ mcp.registerTool(
 		title: "Convert",
 		description:
 			"Convert a number from a base in a space to another base in another space",
-		inputSchema: convertInputShape,
-		outputSchema: convertOutputShape,
+		inputSchema: convertInputSchema.shape,
+		outputSchema: convertOutputSchema.shape,
 	},
 	convert,
 )
 
-mcp.registerTool<typeof uuidInputShape, typeof uuidOutputShape>(
+mcp.registerTool(
 	"uuid",
 	{
 		title: "UUID",
 		description:
 			"Generate a UUID in a different base with a different space than normal UUIDs",
-		inputSchema: uuidInputShape,
-		outputSchema: uuidOutputShape,
+		inputSchema: uuidInputSchema.shape,
+		outputSchema: uuidOutputSchema.shape,
 	},
 	uuid,
 )

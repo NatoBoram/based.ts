@@ -1,9 +1,9 @@
 import type { ToolCallback } from "@modelcontextprotocol/sdk/server/mcp.js"
 import { getRandomBytes } from "../adapters/bytes.ts"
 import { bytesToBase } from "../adapters/to_base.ts"
-import type { uuidInputShape, UuidOutput } from "../zod/uuid.ts"
+import type { uuidInputSchema, UuidOutput } from "../zod/uuid.ts"
 
-type Callback = ToolCallback<typeof uuidInputShape>
+type Callback = ToolCallback<typeof uuidInputSchema.shape>
 
 export const uuid: Callback = (({ base, space }) => {
 	const bytes = getRandomBytes(16)
