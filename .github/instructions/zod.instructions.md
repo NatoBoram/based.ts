@@ -15,9 +15,9 @@ Zod schemas for MCP tool input/output validation with support for `isolatedDecla
 
 ## Key Files
 
-- `object_type.ts`: `ObjectType<Shape>` helper type
-- `convert.ts`: Conversion tool schemas
-- `uuid.ts`: UUID generation tool schemas
+- #file:../../src/zod/object_type.ts : `ObjectType<Shape>` helper type
+- #file:../../src/zod/convert.ts : Conversion tool schemas
+- #file:../../src/zod/uuid.ts : UUID generation tool schemas
 
 ## Schema Pattern for `isolatedDeclarations`
 
@@ -57,4 +57,4 @@ export const outputSchema: OutputObjectType = object({ result: string() })
 - Always export type aliases for `z.infer<typeof schema>`
 - Use `.describe()` for all fields to provide context in MCP tools
 - Use `.default()` for optional fields to simplify tool usage
-- Import constants from `../consts/` for default values
+- Import constants from #file:../../src/consts for default values

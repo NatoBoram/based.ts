@@ -110,6 +110,7 @@ throw new Error("Invalid space for this base", {
 For implementation patterns specific to each module, see:
 
 - #file:instructions/adapters.instructions.md : Core conversion logic patterns
+- #file:instructions/commander.instructions.md : CLI command implementation with Commander.js
 - #file:instructions/mcp.instructions.md : MCP server and tool implementation
 - #file:instructions/zod.instructions.md : Schema definitions with `isolatedDeclarations` support
 - #file:instructions/vitest.instructions.md : Testing conventions and patterns
