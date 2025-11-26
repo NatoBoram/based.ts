@@ -1,10 +1,11 @@
 import { default as eslint } from "@eslint/js"
 import { default as prettier } from "eslint-config-prettier"
+import { defineConfig } from "eslint/config"
 import { browser, node } from "globals"
 import type { ConfigArray } from "typescript-eslint"
 import { default as tseslint } from "typescript-eslint"
 
-const config: ConfigArray = tseslint.config(
+const config: ConfigArray = defineConfig(
 	{
 		languageOptions: {
 			globals: { ...browser, ...node },
