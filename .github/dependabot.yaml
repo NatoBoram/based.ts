@@ -11,14 +11,28 @@ updates:
       patch:
         update-types:
           - patch
+      minor-development:
+        update-types:
+          - minor
+        dependency-type: development
+      minor-production:
+        update-types:
+          - minor
+        dependency-type: production
       eslint:
         patterns:
           - "*eslint*"
+          - globals
+          - jiti
+      prettier:
+        patterns:
+          - "*prettier*"
       typescript:
         patterns:
           - "*typescript*"
           - tsx
           - typedoc
+
   - package-ecosystem: github-actions
     directory: /
     schedule:
@@ -26,3 +40,10 @@ updates:
       timezone: America/Toronto
     commit-message:
       prefix: "⬆️ "
+    groups:
+      actions:
+        patterns:
+          - actions/*
+      docker:
+        patterns:
+          - docker/*
