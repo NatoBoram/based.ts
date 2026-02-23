@@ -1,5 +1,5 @@
-import type { z, ZodDefault, ZodNumber, ZodString } from "zod/v3"
-import { number, object, string } from "zod/v3"
+import type { z, ZodDefault, ZodNumber, ZodString } from "zod"
+import { number, object, string } from "zod"
 import { base64Space } from "../consts/space.ts"
 import type { ObjectType } from "./object_type.ts"
 
