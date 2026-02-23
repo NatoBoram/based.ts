@@ -2,5 +2,8 @@ ignoredBuiltDependencies:
   - "@modelcontextprotocol/ext-apps"
   - esbuild
 
+overrides:
+  minimatch@<10.2.1: ">=10.2.1"
+
 patchedDependencies:
   "@modelcontextprotocol/sdk": patches/@modelcontextprotocol__sdk.patch
