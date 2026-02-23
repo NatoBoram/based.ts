@@ -1,3 +1,6 @@
 ignoredBuiltDependencies:
-  - '@modelcontextprotocol/ext-apps'
+  - "@modelcontextprotocol/ext-apps"
   - esbuild
+
+patchedDependencies:
+  "@modelcontextprotocol/sdk": patches/@modelcontextprotocol__sdk.patch
