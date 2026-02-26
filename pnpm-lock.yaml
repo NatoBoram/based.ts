@@ -40,8 +40,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.0.2(jiti@2.6.1))
       '@modelcontextprotocol/inspector':
-        specifier: ^0.20.0
-        version: 0.20.0(@preact/signals-core@1.13.0)(@types/node@25.3.1)(@types/react@18.3.28)(typescript@5.9.3)
+        specifier: ^0.21.0
+        version: 0.21.0(@preact/signals-core@1.13.0)(@types/node@25.3.1)(@types/react@18.3.28)(typescript@5.9.3)
       '@types/cors':
         specifier: ^2.8.19
         version: 2.8.19
@@ -547,8 +547,8 @@ packages:
       react-dom:
         optional: true
 
-  '@modelcontextprotocol/ext-apps@1.1.0':
-    resolution: {integrity: sha512-o65O+sHHKP4h1kWMEz9sFKVIzF1BYZj/Oi5WM34g3IIqbwGxGZEailWiMqv360TWyL4HkdgLL6cXDtXebddaDQ==}
+  '@modelcontextprotocol/ext-apps@1.1.2':
+    resolution: {integrity: sha512-Gx4TEo3/F8yq1Ix6LdgLwMrKqfZqD7++eakZdbMUewrYtHeeJn3nKpeNhgEfO7nYRwonqWYomOAszWZWJS0IbA==}
     peerDependencies:
       '@modelcontextprotocol/sdk': ^1.24.0
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -560,20 +560,20 @@ packages:
       react-dom:
         optional: true
 
-  '@modelcontextprotocol/inspector-cli@0.20.0':
-    resolution: {integrity: sha512-T5lbD4tPOPZHCElnPW26eZEnHapsCMEhRdiis/9RHjDdgZfuXk1lee1iPc4llt0UmymG3wrFBs5Ywyal8nFZ2Q==}
+  '@modelcontextprotocol/inspector-cli@0.21.0':
+    resolution: {integrity: sha512-QgkSBazPpVcSz1lnI+Y58Fnkjw9jnEkUr9dNkEbhjgX4XQB1KlfXYDa85lZViNqQp4N3r8tyWAWV3CYsR6koIQ==}
     hasBin: true
 
-  '@modelcontextprotocol/inspector-client@0.20.0':
-    resolution: {integrity: sha512-dxV9dj5SiIV0aoWNu/WscDXGsAHK9wJ9CtQZHDwy8dfhJQ4FKBvKxpEstt5K7KXawMV/sHRm4AGvm92h5FbOtw==}
+  '@modelcontextprotocol/inspector-client@0.21.0':
+    resolution: {integrity: sha512-dqREbK8lmpe/Dty6iI1Rif9C+RRCbWQg2wgSzpFhe9NfuLTgmgudhefQ1QsvYlJWsLJjaFYDaaQ59wBXs4rbDw==}
     hasBin: true
 
-  '@modelcontextprotocol/inspector-server@0.20.0':
-    resolution: {integrity: sha512-ZQnR3axv2s7qJfbo6wEvkD0ctveugJqgH1vBjAb5FdgJb5CIPkLOQkK5qS3lqxM5g0L/OO4ep82eFvnCz7qSSw==}
+  '@modelcontextprotocol/inspector-server@0.21.0':
+    resolution: {integrity: sha512-xgqh2A3TGHUHlOfmhMBTP5MMZhCK935FuXubrheRSve18UeFgfjcRYNYyAKVK9PAp9j/iBrbnL14VJUOwyyb8Q==}
     hasBin: true
 
-  '@modelcontextprotocol/inspector@0.20.0':
-    resolution: {integrity: sha512-GlCBFK1Vqe5xiLT5LfUCJb/yfHrCMXmO4rKOfsZ/jDcWYkwIZyUwPekK7aS8BsbscpcyNSSL2XV7qBypDTR6bw==}
+  '@modelcontextprotocol/inspector@0.21.0':
+    resolution: {integrity: sha512-Cu7AKh8aHuBhFQVEFWRvZCWCf0qc2X6KDaiSW/wqLjHlNB9kZP35cwY3I+q1xvow41OyL7zkr+bTV7w3YrFcXg==}
     engines: {node: '>=22.7.5'}
     hasBin: true
 
@@ -670,11 +670,11 @@ packages:
       '@preact/signals-core':
         optional: true
 
-  '@r2wc/core@1.3.0':
-    resolution: {integrity: sha512-aPBnND92Itl+SWWbWyyxdFFF0+RqKB6dptGHEdiPB8ZvnHWHlVzOfEvbEcyUYGtB6HBdsfkVuBiaGYyBFVTzVQ==}
+  '@r2wc/core@1.3.1':
+    resolution: {integrity: sha512-x9nMthXsTjqr1alE+boX1Zuzqb6/oFi4wAOdWaWcWKcrwq9M/PATK74c3DFJfRnUOkYWPlsz0e4CsFBXJGStSA==}
 
-  '@r2wc/react-to-web-component@2.1.0':
-    resolution: {integrity: sha512-m/PzgUOEiL1HxmvfP5LgBLqB7sHeRj+d1QAeZklwS4OEI2HUU+xTpT3hhJipH5DQoFInDqDTfe0lNFFKcrqk4w==}
+  '@r2wc/react-to-web-component@2.1.1':
+    resolution: {integrity: sha512-AXsIdjxK9ALv0ySWjVadUg3uJ5nS8L4H8eZMYaaWuM+9LNj9DP/r4+sMjI+6jZwb7/FqwxRPHQUq8yimQwBfOA==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -3269,7 +3269,7 @@ snapshots:
       '@modelcontextprotocol/ext-apps': 0.3.1(@modelcontextprotocol/sdk@1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@4.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)
       '@modelcontextprotocol/sdk': 1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@3.25.76)
       '@quilted/threads': 3.3.1(@preact/signals-core@1.13.0)
-      '@r2wc/react-to-web-component': 2.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@r2wc/react-to-web-component': 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@remote-dom/core': 1.10.1(@preact/signals-core@1.13.0)
       '@remote-dom/react': 1.2.2(@preact/signals-core@1.13.0)(react@18.3.1)
       react: 18.3.1
@@ -3306,7 +3306,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@modelcontextprotocol/ext-apps@1.1.0(@modelcontextprotocol/sdk@1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@4.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)':
+  '@modelcontextprotocol/ext-apps@1.1.2(@modelcontextprotocol/sdk@1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@4.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@4.3.6)
       zod: 3.25.76
@@ -3331,7 +3331,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@modelcontextprotocol/inspector-cli@0.20.0(zod@3.25.76)':
+  '@modelcontextprotocol/inspector-cli@0.21.0(zod@3.25.76)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@3.25.76)
       commander: 13.1.0
@@ -3342,10 +3342,10 @@ snapshots:
       - supports-color
       - zod
 
-  '@modelcontextprotocol/inspector-client@0.20.0(@preact/signals-core@1.13.0)(@types/react@18.3.28)':
+  '@modelcontextprotocol/inspector-client@0.21.0(@preact/signals-core@1.13.0)(@types/react@18.3.28)':
     dependencies:
       '@mcp-ui/client': 6.1.0(@preact/signals-core@1.13.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@modelcontextprotocol/ext-apps': 1.1.0(@modelcontextprotocol/sdk@1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@4.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)
+      '@modelcontextprotocol/ext-apps': 1.1.2(@modelcontextprotocol/sdk@1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@4.3.6))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)
       '@modelcontextprotocol/sdk': 1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@3.25.76)
       '@radix-ui/react-checkbox': 1.3.3(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dialog': 1.1.15(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3379,7 +3379,7 @@ snapshots:
       - preact
       - supports-color
 
-  '@modelcontextprotocol/inspector-server@0.20.0':
+  '@modelcontextprotocol/inspector-server@0.21.0':
     dependencies:
       '@modelcontextprotocol/sdk': 1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@3.25.76)
       cors: 2.8.6
@@ -3396,11 +3396,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@modelcontextprotocol/inspector@0.20.0(@preact/signals-core@1.13.0)(@types/node@25.3.1)(@types/react@18.3.28)(typescript@5.9.3)':
+  '@modelcontextprotocol/inspector@0.21.0(@preact/signals-core@1.13.0)(@types/node@25.3.1)(@types/react@18.3.28)(typescript@5.9.3)':
     dependencies:
-      '@modelcontextprotocol/inspector-cli': 0.20.0(zod@3.25.76)
-      '@modelcontextprotocol/inspector-client': 0.20.0(@preact/signals-core@1.13.0)(@types/react@18.3.28)
-      '@modelcontextprotocol/inspector-server': 0.20.0
+      '@modelcontextprotocol/inspector-cli': 0.21.0(zod@3.25.76)
+      '@modelcontextprotocol/inspector-client': 0.21.0(@preact/signals-core@1.13.0)(@types/react@18.3.28)
+      '@modelcontextprotocol/inspector-server': 0.21.0
       '@modelcontextprotocol/sdk': 1.27.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(zod@3.25.76)
       concurrently: 9.2.1
       node-fetch: 3.3.2
@@ -3524,11 +3524,11 @@ snapshots:
     optionalDependencies:
       '@preact/signals-core': 1.13.0
 
-  '@r2wc/core@1.3.0': {}
+  '@r2wc/core@1.3.1': {}
 
-  '@r2wc/react-to-web-component@2.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@r2wc/react-to-web-component@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@r2wc/core': 1.3.0
+      '@r2wc/core': 1.3.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
