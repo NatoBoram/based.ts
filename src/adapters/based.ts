@@ -19,6 +19,7 @@ export class Based {
 		this.space = space
 	}
 
+	/** Create a `Based` from a UTF-8 `string`. */
 	static fromUtf8(
 		value: string,
 		base = 10n,
@@ -28,11 +29,13 @@ export class Based {
 		return new Based(based, base, space)
 	}
 
+	/** Create a `Based` from a `UUID`. */
 	static fromUuid(uuid: UUID, base = 16n, space: string = base64Space): Based {
 		const based = uuidToBase(uuid, base, space)
 		return new Based(based, base, space)
 	}
 
+	/** Divide this `Based` by another `Based`. */
 	divide(based: Based): Based {
 		const dividend = basedToBigInt(this.value, this.base, this.space)
 		const divisor = basedToBigInt(based.value, based.base, based.space)
@@ -40,6 +43,7 @@ export class Based {
 		return new Based(toBase(quotient, this.base, this.space), this.base)
 	}
 
+	/** Subtract another `Based` from this `Based`. */
 	minus(based: Based): Based {
 		const minuend = basedToBigInt(this.value, this.base, this.space)
 		const subtrahend = basedToBigInt(based.value, based.base, based.space)
@@ -47,6 +51,7 @@ export class Based {
 		return new Based(toBase(difference, this.base, this.space), this.base)
 	}
 
+	/** Multiply this `Based` by another `Based`. */
 	multiply(based: Based): Based {
 		const multiplier = basedToBigInt(this.value, this.base, this.space)
 		const multiplicand = basedToBigInt(based.value, based.base, based.space)
@@ -54,6 +59,7 @@ export class Based {
 		return new Based(toBase(product, this.base, this.space), this.base)
 	}
 
+	/** Add another `Based` to this `Based`. */
 	plus(based: Based): Based {
 		const augend = basedToBigInt(this.value, this.base, this.space)
 		const addend = basedToBigInt(based.value, based.base, based.space)
@@ -61,16 +67,19 @@ export class Based {
 		return new Based(toBase(sum, this.base, this.space), this.base)
 	}
 
+	/** Convert this `Based` to a different base. */
 	to(base: bigint, space?: string): Based {
 		const bigInt = basedToBigInt(this.value, this.base, this.space)
 		const value = toBase(bigInt, base, space)
 		return new Based(value, base, space)
 	}
 
+	/** Convert this `Based` to a UTF-8 `string`. */
 	toUtf8(): string {
 		return basedToUtf8(this.value, this.base, this.space)
 	}
 
+	/** Convert this `Based` to a `UUID`. */
 	toUuid(): UUID {
 		return basedToUuid(this.value, this.base, this.space)
 	}

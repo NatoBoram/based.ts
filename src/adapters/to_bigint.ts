@@ -3,8 +3,8 @@ import { base64Space } from "../consts/space.ts"
 import { utf8ToBytes } from "./to_bytes.ts"
 import type { TypedUintArray } from "./typed_array.ts"
 
-/** Turns a `string` in a given `base` into a `bigint` by multiplying each digit
- * by the `base` raised to the power of its position in the `string`. */
+/** Turns a `string` in a given base into a `bigint` by multiplying each digit
+ * by the base raised to the power of its position in the `string`. */
 export function basedToBigInt(
 	based: string,
 	base: bigint,
@@ -34,7 +34,7 @@ export function basedToBigInt(
 	}, 0n)
 }
 
-/** Turns a typed `uint` array into a `bigint` by converting each `uint` into a
+/** Turns a `TypedUintArray` into a `bigint` by converting each `uint` into a
  * hexadecimal string then concatenating the resulting digits using JavaScript's
  * `0x` notation. */
 export function bytesToBigInt(typedArray: TypedUintArray): bigint {
@@ -50,11 +50,13 @@ export function bytesToBigInt(typedArray: TypedUintArray): bigint {
 	return BigInt(`0x${hexes.join("")}`)
 }
 
+/** Convert a UTF-8 `string` to a `bigint`. */
 export function utf8ToBigInt(value: string): bigint {
 	const bytes = utf8ToBytes(value)
 	return bytesToBigInt(bytes)
 }
 
+/** Convert a `UUID` to a `bigint`. */
 export function uuidToBigInt(uuid: UUID): bigint {
 	const value = uuid.replaceAll("-", "")
 	return basedToBigInt(value, 16n, base64Space)
