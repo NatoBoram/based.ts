@@ -2,6 +2,7 @@ import type { UUID } from "node:crypto"
 import { base64Space } from "../consts/space.ts"
 import { basedToBigInt } from "./to_bigint.ts"
 
+/** Turns a `string` in a given base into a `Uint8ClampedArray`. */
 export function basedToBytes(
 	based: string,
 	base: bigint,
@@ -28,11 +29,13 @@ export function bigIntToBytes(bigInt: bigint): Uint8ClampedArray {
 	return bytes
 }
 
+/** Encode a UTF-8 `string` into a `Uint8Array`. */
 export function utf8ToBytes(value: string): Uint8Array {
 	const encoder = new TextEncoder()
 	return encoder.encode(value)
 }
 
+/** Convert a `UUID` to a `Uint8ClampedArray`. */
 export function uuidToBytes(uuid: UUID): Uint8ClampedArray {
 	const value = uuid.replaceAll("-", "")
 	return basedToBytes(value, 16n, base64Space)

@@ -5,10 +5,17 @@ import { Based } from "./based.ts"
 describe.concurrent("Based", () => {
 	const base2 = new Based("10", 2n, base64Space.slice(0, 2))
 	const base36 = new Based("10", 36n, base64Space.slice(0, 36))
+	const zero = new Based("0", 10n, base64Space.slice(0, 10))
 
 	test("divide", ({ expect }) => {
 		const result = base36.divide(base2)
 		expect(result.value).toBe("i")
+	})
+
+	test("divide by zero", ({ expect }) => {
+		expect(() => base36.divide(zero)).toThrow(
+			new RangeError("Based division by zero"),
+		)
 	})
 
 	test("minus", ({ expect }) => {

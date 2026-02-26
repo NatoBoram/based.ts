@@ -1,15 +1,18 @@
-import { default as eslint } from "@eslint/js"
-import { default as prettier } from "eslint-config-prettier"
+import eslint from "@eslint/js"
+import prettier from "eslint-config-prettier"
+import type { Config } from "eslint/config"
 import { defineConfig } from "eslint/config"
 import { browser, node } from "globals"
-import type { ConfigArray } from "typescript-eslint"
-import { default as tseslint } from "typescript-eslint"
+import tseslint from "typescript-eslint"
 
-const config: ConfigArray = defineConfig(
+const config: Config[] = defineConfig(
 	{
 		languageOptions: {
 			globals: { ...browser, ...node },
-			parserOptions: { project: "./tsconfig.eslint.json" },
+			parserOptions: {
+				project: "./tsconfig.eslint.json",
+				warnOnUnsupportedTypeScriptVersion: false,
+			},
 		},
 	},
 
@@ -91,6 +94,13 @@ const config: ConfigArray = defineConfig(
 			"pnpm-lock.yaml",
 		],
 	},
-) satisfies ConfigArray
+
+	// Bugged rules.
+	{
+		rules: {
+			"@typescript-eslint/only-throw-error": "off",
+		},
+	},
+)
 
 export default config

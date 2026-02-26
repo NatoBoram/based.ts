@@ -3,6 +3,7 @@ import { base64Space } from "../consts/space.ts"
 import { toBase } from "./to_base.ts"
 import { basedToBigInt, bytesToBigInt } from "./to_bigint.ts"
 
+/** Turns a `string` in a given base into a `UUID`. */
 export function basedToUuid(
 	based: string,
 	base: bigint,
@@ -12,6 +13,8 @@ export function basedToUuid(
 	return bigIntToUuid(bigInt)
 }
 
+/** Turns a `bigint` into a `UUID` and pads it to 32 characters with leading
+ * zeroes. */
 export function bigIntToUuid(bigInt: bigint): UUID {
 	const base16 = toBase(bigInt, 16n)
 	const hexes = trimUuidHexes(base16)
@@ -30,6 +33,7 @@ export function bigIntToUuid(bigInt: bigint): UUID {
 	return uuid
 }
 
+/** Turns a `Uint8Array` into a `UUID`. */
 export function bytesToUuid(bytes: Uint8Array): UUID {
 	const bigInt = bytesToBigInt(bytes)
 	return bigIntToUuid(bigInt)

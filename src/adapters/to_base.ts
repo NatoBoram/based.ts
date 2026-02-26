@@ -3,6 +3,7 @@ import { base64Space } from "../consts/space.ts"
 import { bytesToBigInt, utf8ToBigInt, uuidToBigInt } from "./to_bigint.ts"
 import type { TypedUintArray } from "./typed_array.ts"
 
+/** Convert a `TypedUintArray` to a string in a given base. */
 export function bytesToBase(
 	bytes: TypedUintArray,
 	base: bigint,
@@ -52,6 +53,7 @@ export function utf8ToBase(
 	return toBase(bigInt, base, space)
 }
 
+/** Convert a `UUID` to a string in a given base. */
 export function uuidToBase(
 	uuid: UUID,
 	base: bigint,
