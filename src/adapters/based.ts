@@ -39,6 +39,12 @@ export class Based {
 	divide(based: Based): Based {
 		const dividend = basedToBigInt(this.value, this.base, this.space)
 		const divisor = basedToBigInt(based.value, based.base, based.space)
+
+		if (divisor === 0n)
+			throw new RangeError("Based division by zero", {
+				cause: { based, dividend, divisor, this: this },
+			})
+
 		const quotient = dividend / divisor
 		return new Based(
 			toBase(quotient, this.base, this.space),
@@ -84,6 +90,16 @@ export class Based {
 		const bigInt = basedToBigInt(this.value, this.base, this.space)
 		const value = toBase(bigInt, base, space)
 		return new Based(value, base, space)
+	}
+
+	/** Convert this `Based` to a JSON object. */
+	toJSON() {
+		return { base: this.base.toString(), space: this.space, value: this.value }
+	}
+
+	/** Convert this `Based` to a JSON string. */
+	toString() {
+		return JSON.stringify(this)
 	}
 
 	/** Convert this `Based` to a UTF-8 `string`. */
