@@ -13,7 +13,9 @@ describe.concurrent("Based", () => {
 	})
 
 	test("divide by zero", ({ expect }) => {
-		expect(() => base36.divide(zero)).toThrowError(RangeError)
+		expect(() => base36.divide(zero)).toThrow(
+			new RangeError("Based division by zero"),
+		)
 	})
 
 	test("minus", ({ expect }) => {
