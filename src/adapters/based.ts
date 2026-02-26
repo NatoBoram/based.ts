@@ -68,7 +68,7 @@ export class Based {
 	}
 
 	/** Convert this `Based` to a different base. */
-	to(base: bigint, space?: string): Based {
+	to(base: bigint, space: string = this.space): Based {
 		const bigInt = basedToBigInt(this.value, this.base, this.space)
 		const value = toBase(bigInt, base, space)
 		return new Based(value, base, space)
