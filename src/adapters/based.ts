@@ -40,7 +40,11 @@ export class Based {
 		const dividend = basedToBigInt(this.value, this.base, this.space)
 		const divisor = basedToBigInt(based.value, based.base, based.space)
 		const quotient = dividend / divisor
-		return new Based(toBase(quotient, this.base, this.space), this.base)
+		return new Based(
+			toBase(quotient, this.base, this.space),
+			this.base,
+			this.space,
+		)
 	}
 
 	/** Subtract another `Based` from this `Based`. */
@@ -48,7 +52,11 @@ export class Based {
 		const minuend = basedToBigInt(this.value, this.base, this.space)
 		const subtrahend = basedToBigInt(based.value, based.base, based.space)
 		const difference = minuend - subtrahend
-		return new Based(toBase(difference, this.base, this.space), this.base)
+		return new Based(
+			toBase(difference, this.base, this.space),
+			this.base,
+			this.space,
+		)
 	}
 
 	/** Multiply this `Based` by another `Based`. */
@@ -56,7 +64,11 @@ export class Based {
 		const multiplier = basedToBigInt(this.value, this.base, this.space)
 		const multiplicand = basedToBigInt(based.value, based.base, based.space)
 		const product = multiplier * multiplicand
-		return new Based(toBase(product, this.base, this.space), this.base)
+		return new Based(
+			toBase(product, this.base, this.space),
+			this.base,
+			this.space,
+		)
 	}
 
 	/** Add another `Based` to this `Based`. */
@@ -64,7 +76,7 @@ export class Based {
 		const augend = basedToBigInt(this.value, this.base, this.space)
 		const addend = basedToBigInt(based.value, based.base, based.space)
 		const sum = augend + addend
-		return new Based(toBase(sum, this.base, this.space), this.base)
+		return new Based(toBase(sum, this.base, this.space), this.base, this.space)
 	}
 
 	/** Convert this `Based` to a different base. */
