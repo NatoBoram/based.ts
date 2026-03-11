@@ -61,8 +61,7 @@
 		"skipDefaultLibCheck": true,
 		"skipLibCheck": true
 	},
-	"include": ["src"],
-	"exclude": ["src/*/*"],
+	"include": ["src/index.*.ts", "src/index.ts", "src/main.*.ts", "src/main.ts"],
 	"references": [
 		{ "path": "src/adapters/tsconfig.json" },
 		{ "path": "src/commander/tsconfig.json" },
