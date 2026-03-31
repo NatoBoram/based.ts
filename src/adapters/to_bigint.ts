@@ -20,7 +20,7 @@ export function basedToBigInt(
 	if (base <= 36) based = based.toLowerCase()
 	if (based.startsWith("-")) return -basedToBigInt(based.slice(1), base, space)
 
-	return Array.from(based).reduce<bigint>((result, digit, digitIndex) => {
+	return Array.from(based).reduce((result, digit, digitIndex) => {
 		const spaceIndex = space.indexOf(digit)
 		if (spaceIndex == -1)
 			throw new Error("Invalid digit for this space", {

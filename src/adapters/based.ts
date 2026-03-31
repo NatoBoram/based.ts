@@ -5,6 +5,19 @@ import { basedToBigInt } from "./to_bigint.ts"
 import { basedToUtf8 } from "./to_utf-8.ts"
 import { basedToUuid } from "./to_uuid.ts"
 
+/**
+ * A JSON representation of a {@link Based}.
+ *
+ * @param base a string representation of the base
+ * @param space the character set used for encoding
+ * @param value the encoded string
+ */
+export interface BasedJSON {
+	readonly base: string
+	readonly space: string
+	readonly value: string
+}
+
 /** Base-encoded string. Use this class if you convert from and to different
  * bases often. Otherwise, just use the provided utilities. You can provide a
  * custom number's space */
@@ -93,12 +106,12 @@ export class Based {
 	}
 
 	/** Convert this `Based` to a JSON object. */
-	toJSON() {
+	toJSON(): BasedJSON {
 		return { base: this.base.toString(), space: this.space, value: this.value }
 	}
 
 	/** Convert this `Based` to a JSON string. */
-	toString() {
+	toString(): string {
 		return JSON.stringify(this)
 	}
 
