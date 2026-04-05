@@ -1,0 +1,18 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"arrowParens": "avoid",
+	"semi": false,
+	"trailingComma": "all",
+	"useTabs": true,
+	"printWidth": 80,
+	"sortPackageJson": true,
+	"ignorePatterns": [
+		".pnpm-store/",
+		"coverage/",
+		"dist/",
+		"docs/",
+		"node_modules/",
+		"package-lock.json",
+		"pnpm-lock.yaml"
+	]
+}

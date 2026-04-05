@@ -40,11 +40,10 @@ export function basedToBigInt(
 export function bytesToBigInt(typedArray: TypedUintArray): bigint {
 	const maxLength = typedArray.BYTES_PER_ELEMENT * 2
 	const hexes = Array.from(typedArray).reduce(
-		(hexes, value) => (
-			hexes.push(value.toString(16).padStart(maxLength, "0")),
-			hexes
+		(array, value) => (
+			array.push(value.toString(16).padStart(maxLength, "0")), array
 		),
-		new Array<string>(typedArray.length),
+		Array.from<string>({ length: typedArray.length }),
 	)
 
 	return BigInt(`0x${hexes.join("")}`)
