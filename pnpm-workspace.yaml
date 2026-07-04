@@ -4,7 +4,7 @@ allowBuilds:
 overrides:
   hono@<4.12.25: ">=4.12.25"
   minimatch@<10.2.1: ">=10.2.1"
-  vite@<=7.3.1: ">=7.3.2"
+  vite@<=7.3.4: ">=7.3.5"
 
 patchedDependencies:
   "@modelcontextprotocol/sdk": patches/@modelcontextprotocol__sdk.patch
