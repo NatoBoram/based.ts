@@ -1,6 +1,5 @@
-ignoredBuiltDependencies:
-  - "@modelcontextprotocol/ext-apps"
-  - esbuild
+allowBuilds:
+  esbuild: false
 
 overrides:
   hono@<4.12.2: ">=4.12.2"
