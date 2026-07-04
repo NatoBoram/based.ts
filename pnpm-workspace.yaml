@@ -2,7 +2,7 @@ allowBuilds:
   esbuild: false
 
 overrides:
-  hono@<4.12.2: ">=4.12.2"
+  hono@<4.12.25: ">=4.12.25"
   minimatch@<10.2.1: ">=10.2.1"
 
 patchedDependencies:
