@@ -55,3 +55,11 @@ updates:
       docker:
         patterns:
           - docker/*
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: America/Toronto
+    commit-message:
+      prefix: "⬆️ "
