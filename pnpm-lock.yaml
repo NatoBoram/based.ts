@@ -23,7 +23,7 @@ importers:
     dependencies:
       '@modelcontextprotocol/sdk':
         specifier: ^1.29.0
-        version: 1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@4.4.3)
+        version: 1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@4.6.5)
       commander:
         specifier: ^15.0.0
         version: 15.0.0
@@ -38,7 +38,7 @@ importers:
         version: 1.12.0(supports-color@8.1.1)
       zod:
         specifier: ^4.4.3
-        version: 4.4.3
+        version: 4.6.5
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -421,8 +421,8 @@ packages:
     deprecated: 'v1 is deprecated. Upgrade to v2: npm i @modelcontextprotocol/inspector@latest. v1 gets security fixes only, published under the v1-latest tag.'
     hasBin: true
 
-  '@modelcontextprotocol/sdk@1.29.0':
-    resolution: {integrity: sha512-zo37mZA9hJWpULgkRpowewez1y6ML5GsXJPY8FI0tBBCd77HEvza4jDqRKOXgHNn867PVGCyTdzqpz0izu5ZjQ==}
+  '@modelcontextprotocol/sdk@1.30.1':
+    resolution: {integrity: sha512-H2HxLvC3HDNybePJaLdSrU1hhUK5iQw+WvV1b01myFyI7sdVGe1u/IPTE5D9fGCiJDVtgMV/lmFkQXLmQyIFYA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@cfworker/json-schema': ^4.1.1
@@ -2720,8 +2720,8 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.4.3:
-    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+  zod@4.6.5:
+    resolution: {integrity: sha512-v5l/aFXZQeai4awLbOpSoHecE9UiMrnfx75tEXLjNonXVARxQ5mOeipTjROUchszUNCqnE+hqAMujRsRHsut2Q==}
 
 snapshots:
 
@@ -2917,8 +2917,8 @@ snapshots:
 
   '@mcp-ui/client@6.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)':
     dependencies:
-      '@modelcontextprotocol/ext-apps': 1.7.4(@modelcontextprotocol/sdk@1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)
-      '@modelcontextprotocol/sdk': 1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/ext-apps': 1.7.4(@modelcontextprotocol/sdk@1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       zod: 3.25.76
@@ -2926,9 +2926,9 @@ snapshots:
       - '@cfworker/json-schema'
       - supports-color
 
-  '@modelcontextprotocol/ext-apps@1.7.4(@modelcontextprotocol/sdk@1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)':
+  '@modelcontextprotocol/ext-apps@1.7.4(@modelcontextprotocol/sdk@1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
       '@standard-schema/spec': 1.1.0
       zod: 3.25.76
     optionalDependencies:
@@ -2937,7 +2937,7 @@ snapshots:
 
   '@modelcontextprotocol/inspector-cli@0.22.0(supports-color@8.1.1)(zod@3.25.76)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
       commander: 13.1.0
       express: 5.2.1(supports-color@8.1.1)
       spawn-rx: 5.1.2(supports-color@8.1.1)
@@ -2949,8 +2949,8 @@ snapshots:
   '@modelcontextprotocol/inspector-client@0.22.0(supports-color@8.1.1)':
     dependencies:
       '@mcp-ui/client': 6.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@8.1.1)
-      '@modelcontextprotocol/ext-apps': 1.7.4(@modelcontextprotocol/sdk@1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)
-      '@modelcontextprotocol/sdk': 1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/ext-apps': 1.7.4(@modelcontextprotocol/sdk@1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
       '@radix-ui/react-checkbox': 1.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-dialog': 1.1.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-icons': 1.3.2(react@18.3.1)
@@ -2983,7 +2983,7 @@ snapshots:
 
   '@modelcontextprotocol/inspector-server@0.22.0(supports-color@8.1.1)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
       cors: 2.8.6
       express: 5.2.1(supports-color@8.1.1)
       express-rate-limit: 8.5.2(express@5.2.1(supports-color@8.1.1))
@@ -3003,7 +3003,7 @@ snapshots:
       '@modelcontextprotocol/inspector-cli': 0.22.0(supports-color@8.1.1)(zod@3.25.76)
       '@modelcontextprotocol/inspector-client': 0.22.0(supports-color@8.1.1)
       '@modelcontextprotocol/inspector-server': 0.22.0(supports-color@8.1.1)
-      '@modelcontextprotocol/sdk': 1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
+      '@modelcontextprotocol/sdk': 1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)
       concurrently: 9.2.3
       node-fetch: 3.3.2
       open: 10.2.0
@@ -3023,7 +3023,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@modelcontextprotocol/sdk@1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)':
+  '@modelcontextprotocol/sdk@1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@3.25.76)':
     dependencies:
       '@hono/node-server': 1.19.14(hono@4.12.27)
       ajv: 8.20.0
@@ -3045,7 +3045,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@modelcontextprotocol/sdk@1.29.0(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@4.4.3)':
+  '@modelcontextprotocol/sdk@1.30.1(patch_hash=53ee9feae52510828531c66aa87d82a8c716a0addf80fc51ec1bb023f25d373d)(supports-color@8.1.1)(zod@4.6.5)':
     dependencies:
       '@hono/node-server': 1.19.14(hono@4.12.27)
       ajv: 8.20.0
@@ -3062,8 +3062,8 @@ snapshots:
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
       raw-body: 3.0.2
-      zod: 4.4.3
-      zod-to-json-schema: 3.25.2(zod@4.4.3)
+      zod: 4.6.5
+      zod-to-json-schema: 3.25.2(zod@4.6.5)
     transitivePeerDependencies:
       - supports-color
 
@@ -5297,10 +5297,10 @@ snapshots:
     dependencies:
       zod: 3.25.76
 
-  zod-to-json-schema@3.25.2(zod@4.4.3):
+  zod-to-json-schema@3.25.2(zod@4.6.5):
     dependencies:
-      zod: 4.4.3
+      zod: 4.6.5
 
   zod@3.25.76: {}
 
-  zod@4.4.3: {}
+  zod@4.6.5: {}
