@@ -3,3 +3,6 @@
  * the standard, most common base64 letters, `+` and `/`. */
 export const base64Space =
 	"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/"
+
+export const urlSafeSpace =
+	"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_"
