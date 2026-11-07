@@ -1,4 +1,5 @@
 allowBuilds:
+  "@modelcontextprotocol/inspector": false
   esbuild: false
 
 overrides:
@@ -13,3 +14,7 @@ overrides:
 
 patchedDependencies:
   "@modelcontextprotocol/sdk": patches/@modelcontextprotocol__sdk.patch
+
+permissions:
+  "@modelcontextprotocol/inspector":
+    skills: false
